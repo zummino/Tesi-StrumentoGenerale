@@ -28,7 +28,7 @@ public class Test1 {
 
   @Test
   public void test1() throws Exception {
-    driver.get("http://www.uni2na.it/chi-siamo/cenni-storici");
+    driver.get("http://www.unina.it/chi-siamo/cenni-storici");
     driver.findElement(By.id("ateneo")).click();
     driver.findElement(By.xpath("//nav[@id='sidebar-navigation']/ul/li[5]/span")).click();
     driver.findElement(By.xpath("//nav[@id='sidebar-navigation']/ul/li[3]/span")).click();
