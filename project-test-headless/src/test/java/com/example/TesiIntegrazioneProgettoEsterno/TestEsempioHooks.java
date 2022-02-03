@@ -27,7 +27,7 @@ public class TestEsempioHooks {
   }
 
   @Test
-  public void testEsempioHooks() throws Exception {
+  public void testEsempio_loc_Hooks_release_1_0() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.xpath("//*[@x-test-tpl-2]//*[@x-test-hook-10]")).click();
     driver.findElement(By.xpath("//*[@x-test-tpl-2]//*[@x-test-hook-10]")).clear();

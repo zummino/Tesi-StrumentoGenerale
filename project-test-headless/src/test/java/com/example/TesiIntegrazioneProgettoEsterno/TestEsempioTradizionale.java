@@ -27,7 +27,7 @@ public class TestEsempioTradizionale {
   }
 
   @Test
-  public void testEsempioTradizionale() throws Exception {
+  public void testEsempioTradizionale_release_1_0() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.id("exampleInputEmail1")).click();
     driver.findElement(By.id("exampleInputEmail1")).clear();
