@@ -1,0 +1,215 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Github Actions Maven Build Example
+
+# Controls when the workflow will run
+on:
+  release:
+    types: [published]
+
+
+ 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    environment:
+      name: envForGithubActions
+    
+      
+   # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 1 - Checkout main branch from GitHub
+        uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Step 2 - Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          
+      - name: Step 2.2 - Visualizzare tag corrente
+        run: |
+          echo "Vediamo il tag corrente:"
+          echo "${GITHUB_REF#refs/tags/}"
+          echo "${GITHUB_REF#refs/heads/}"
+          echo "Vediamo se si potrebbe capire automaticamente che si usano gli hooks"
+          echo "Stampa a video degli utlimi 5 caratteri del tag della release corrente"
+          varTemp=$(echo "${GITHUB_REF#refs/tags/}" | tail -c 6)
+          echo "$varTemp"
+          echo "Vediamo qual è l'id dell'attuale commit"
+          echo "$GITHUB_SHA"
+          echo "Vediamo path WEB DRIVER"
+          echo "${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver"
+            
+      - name: Step 3 - Installare Node versione 10 in Ubuntu
+        run: |
+          sudo apt update
+          sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+          curl -sL https://deb.nodesource.com/setup_10.x | sudo bash
+          sudo apt install nodejs
+          sudo npm cache clean -f
+          sudo npm install -g n
+          sudo n stable
+          sudo n 10.18.0        
+          echo "Versione di node: "
+          node -v
+          echo "Versione di npm: "
+          npm -v          
+          npm install
+          echo "Provo ad INSTALLARE bcrypt"
+          npm install bcrypt
+          npm fund
+          echo "vedi se ha fatto bene o no"
+          
+      - name: Step 4 - Unzip test-hooks ed installazione dentro test-guard di npm
+        run: | 
+          ls -a
+          unzip test-hooks.zip
+          cd test-hooks
+          ls -a
+          cd test-guard
+          ls -a
+          echo "Versione di node: "
+          node -v
+          echo "Versione di npm: "
+          npm -v
+          echo "Provo ad installare con npm install"
+          npm install
+          ls -a
+          npm audit fix
+          echo "Provo ad INSTALLARE bcrypt"
+          npm install bcrypt
+          npm fund
+          echo "vedi se ha fatto bene o no" 
+        
+      - name: Step 5 - Instrumenta l'applicazione iniettando gli Hooks
+        run: |
+            cd test-hooks
+            cd test-guard
+            ls -a
+            echo "Visualizzazione file ftl prima dell injection! "
+            cat ${{ secrets.DIR_FILE_FE }}
+            echo "Visualizza versione di node"
+            node -v
+            echo "... Cancellazione e successivo aggiornamento di node_modules ..."
+            rm -rf node_modules/
+            npm update          
+            echo "entra nel if solamente se si intendono utilizzare gli Hooks nel progetto"
+            varTemp=$(echo "${GITHUB_REF#refs/tags/}" | tail -c 6)
+            echo "varTemp"
+            if [ "$varTemp" == "Hooks" ]; then         
+            echo "Sono entrato nel if"
+            echo "INJECTION adesso..."
+            echo "Visualizza versione di node"
+            node -v
+            node main.js inject-hooks ${{ secrets.DIR_FILE_FE }} --grammar ${{ secrets.GRAMMAR_TYPE }}
+            echo "Visualizzazione file ftl dopo l'injection!!! "
+            cat ${{ secrets.DIR_FILE_FE }}
+            fi
+            echo "Fuori dal if"               
+            
+      - name: Step 6 - Creazione directory Test Suite
+        run: |
+          ls -a
+          if [ ! -d "${{ secrets.PATH_REPOSITORY }}/TestSuite" ]; then
+            echo "Vedi se sono dentro l'if numero 1"
+            sudo mkdir TestSuite
+          fi
+          echo "Vediamo se ha creato la cartella"
+          ls -a       
+          cd TestSuite
+          ls -a
+          if [ ! -d "${{ secrets.PATH_REPOSITORY }}/TestSuite/TestHTML" ]; then
+            echo "Vedi se sono dentro l'if numero 2"
+            sudo mkdir TestHTML
+          fi
+          
+      - name: Step 7 - Pulizia directory per split test html
+        run: |
+          ls -a
+          echo "Rechiamoci nella directory TestHTML"
+          cd TestSuite/TestHTML
+          echo "se esite già, cancella la cartella ReportSplitter"
+          if [ -d "ReportSplitter" ]; then
+            echo "La cartella esiste già"
+            sudo rm -rf ReportSplitter
+            echo "cartella cancellata"
+          fi
+          echo "Prova a creare cartella"
+          sudo mkdir ReportSplitter
+          echo "cartella creata"
+            
+      - name: Step 8 - Esecuzione script per lo split dei test html
+        run: |
+          ls -a
+          echo "Rechiamoci nella directory dove si trova lo script test-script-splitter"
+          cd test-hooks/test-guard
+          ls -a
+          echo "Proviamo ad eseguire lo script test-script-splitter"
+          sudo bash -c 'node test-script-splitter.js --suites ${{ secrets.PATH_REPOSITORY }}/TestSuite/TestHTML --dest ${{ secrets.PATH_REPOSITORY }}/TestSuite/TestHTML/ReportSplitter/ReportSplit --num ${{ secrets.NUMERO_SPLIT }}' 
+          echo "Script eseguito"
+          cd ${{ secrets.PATH_REPOSITORY }}/TestSuite/TestHTML/ReportSplitter
+          echo "Vediamo se ha generato le n cartelle ReportSplit"
+          ls -a
+          echo "Vediamo cosa c'è dentro ReportSplit0"
+          cd ReportSplit0
+          ls -a
+        
+      - name: Step 9 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
+        run:  |
+            cd ${{ secrets.PATH_REPOSITORY }}
+            bash startBackEnd.sh &
+            
+      - name: Step 10 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
+        run:  |
+            cd ${{ secrets.PATH_REPOSITORY }}
+            bash startFrontEnd.sh &
+          
+      - name: Step 11 - Install Chrome Headless
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade
+          sudo apt-get -u dist-upgrade
+          sudo apt-get install -y libappindicator1 fonts-liberation
+          sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-scalable
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get -f install
+          google-chrome-stable --headless --disable-gpu    
+          
+      - name: Step 12 - Install Chrome-Driver for test junit
+        run:  |
+            wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+            echo "Vedo se si trova il punto zip"
+            ls -a
+            echo "Provo ad unzippare chormedriver_linux64.zip"
+            unzip chromedriver_linux64.zip
+            sudo mv chromedriver ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver
+            sudo chown root:root ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver
+            sudo chmod +x ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver
+            echo "Vediamo il nome della cartella unzippata"
+            ls -a
+            echo "Vediamo se ha scaricato il driver"
+            cd chromedriver_v94_linux64
+            echo "Contenuto della cartella chromedriver_v94_linux64"
+            ls -a         
+          
+      - name: Step 13 - Eseguire test maven
+        run:  |
+            cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless
+            sudo bash -c 'mvn -Dtest=${{ secrets.TEST_TO_EXECUTE }}  test site &'
+            sleep ${{ secrets.MIN_EXE_TEST }}m
+            
+      - name: Step 14 - Visualizzare report test
+        run: |
+            cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless/target/surefire-reports
+            ls -a 
+            echo "Visualizziamo adesso tutti i report txt ottenuti dalle nostre test suite"
+            cat *.txt
+            echo "Fine visualizzazione report!!!"           
