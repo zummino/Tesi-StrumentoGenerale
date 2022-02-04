@@ -1,25 +1,23 @@
+
+//File risulta attualmente aggiornato per webdriver chrome headless!
 package com.example.TesiIntegrazioneProgettoEsterno;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.apache.commons.io.FileUtils;
-import java.io.File;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 class TestEsempioTradizionale {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
 
-	  @BeforeAll
-	  public static void setUp() throws Exception {
+	  @Before
+	  public void setUp() throws Exception {
 		
 		  // Init chromedriver
 		  String chromeDriverPath = "/home/runner/work/Tesi-integrazioneProgettoEsterno/Tesi-integrazioneProgettoEsterno/chromedriver_v94_linux64/chromedriver";
@@ -60,8 +58,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
   }
 
 
- @AfterAll
-	  public static void tearDown() throws Exception {
+
+ @After
+	  public void tearDown() throws Exception {
 	    driver.quit();
 	    String verificationErrorString = verificationErrors.toString();
 	    if (!"".equals(verificationErrorString)) {
