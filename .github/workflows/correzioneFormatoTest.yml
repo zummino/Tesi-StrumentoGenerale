@@ -45,7 +45,7 @@ jobs:
          
       - name: Step 4 - Verifica valori aggiornati file di test
         run: |
-          cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest
+          cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
           ls -a
           echo "Vediamo il valore dei file java corretti:"
           cat *.java
@@ -59,7 +59,7 @@ jobs:
           git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
           git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
           echo "Andiamo ad aggiungere la cartella dei report"
-          git add ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest
+          git add ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
           echo "Cartella aggiunta!"
           git commit -m "commit da correzioneFormatoTest.yml"
           git branch -M ${{ secrets.BRANCH_NAME }} 
