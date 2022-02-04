@@ -61,7 +61,7 @@ jobs:
           echo "Andiamo ad aggiungere la cartella dei report"
           git add ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
           echo "Cartella aggiunta!"
-          git commit -m "commit da correzioneFormatoTest.yml"
+          git commit -m "push automatico effettuato da correzioneFormatoTest.yml"
           git branch -M ${{ secrets.BRANCH_NAME }} 
           git push -u origin ${{ secrets.BRANCH_NAME }}
           
