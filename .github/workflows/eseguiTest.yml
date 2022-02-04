@@ -205,7 +205,7 @@ jobs:
         run:  |
             cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless
             sudo bash -c 'mvn -Dtest=${{ secrets.TEST_TO_EXECUTE }}  test site &'
-            sleep ${{ secrets.MIN_EXE_TEST }}m
+            
             
       - name: Step 14 - Visualizzare report test
         run: |
