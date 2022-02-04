@@ -41,7 +41,7 @@ jobs:
           cd target
           echo "Vediamo contenuto cartella target"
           ls -a
-          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
+          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
          
       - name: Step 4 - Verifica valori aggiornati file di test
         run: |
