@@ -2,6 +2,7 @@ package it.correzioneFormatoTest.function;
 
 import java.io.File;
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class FunzioniUtili {
 	
@@ -14,7 +15,7 @@ public class FunzioniUtili {
 	public LinkedList<File> findAllFilesInFolder(File folder, String estensioneFile) {
 		LinkedList<File> listaFile = new LinkedList<File>();
 		
-		for (File file : folder.listFiles()) {
+		for (File file : Objects.requireNonNull(folder.listFiles())) {
 			if (!file.isDirectory()) {
 				System.out.println(file.getName());
 				if(file.getName().endsWith("."+estensioneFile)) {
