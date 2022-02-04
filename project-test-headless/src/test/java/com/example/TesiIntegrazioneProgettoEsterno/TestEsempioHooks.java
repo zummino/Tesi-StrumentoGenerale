@@ -1,3 +1,5 @@
+
+//File risulta attualmente aggiornato per webdriver chrome headless!
 package com.example.TesiIntegrazioneProgettoEsterno;
 
 import java.util.concurrent.TimeUnit;
@@ -9,7 +11,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-class TestEsempioHooks {
+public class TestEsempioHooks {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
@@ -54,6 +56,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//*[@x-test-tpl-2]//*[@x-test-hook-18]")).click();
     driver.findElement(By.xpath("//*[@x-test-tpl-2]//*[@x-test-hook-20]//*[@x-test-tpl-23]//*[@x-test-hook-27]")).click();
   }
+
 
 
 
