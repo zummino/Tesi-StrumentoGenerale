@@ -83,26 +83,22 @@ public class CorrezioneFormatoTestApplication {
 				+ "package "+testsPackage+";"
 				+ "\n"
 				+ "\n"
-				+ "import java.util.regex.Pattern;\n"
 				+ "import java.util.concurrent.TimeUnit;\n"
 				+ "\n"
 				+ "import org.junit.*;\n"
 				+ "\n"
 				+ "import static org.junit.Assert.*;\n"
-				+ "import static org.hamcrest.CoreMatchers.*;\n"
 				+ "import org.openqa.selenium.*;\n"
 				+ "import org.openqa.selenium.chrome.ChromeDriver;\n"
-				+ "import org.openqa.selenium.support.ui.Select;\n"
-				+ "import org.apache.commons.io.FileUtils;\n"
-				+ "import java.io.File;\n";
-		
+				+ "import org.openqa.selenium.chrome.ChromeOptions;\n";
+
 		
 		final String attributi_beforeAll = "private static WebDriver driver;\n"
 				+ "private boolean acceptNextAlert = true;\n"
 				+ "private static StringBuffer verificationErrors = new StringBuffer();\n"
 				+ "\n"
-				+ "	  @BeforeAll\n"
-				+ "	  public static void setUp() throws Exception {\n"
+				+ "	  @Before\n"
+				+ "	  public void setUp() throws Exception {\n"
 				+ "		\n"
 				+ "		  // Init chromedriver\n"
 				+ "		  String chromeDriverPath = \""+chromeDriverPath+"\";\n"
@@ -118,8 +114,8 @@ public class CorrezioneFormatoTestApplication {
 				+ "	  }";
 		
 		
-		final String afterAll_finoAllaFine = " @AfterAll\n"
-				+ "	  public static void tearDown() throws Exception {\n"
+		final String afterAll_finoAllaFine = " @After\n"
+				+ "	  public void tearDown() throws Exception {\n"
 				+ "	    driver.quit();\n"
 				+ "	    String verificationErrorString = verificationErrors.toString();\n"
 				+ "	    if (!\"\".equals(verificationErrorString)) {\n"
