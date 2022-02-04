@@ -239,7 +239,7 @@ public class CorrezioneFormatoTestApplication {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 			
 			//Definisco Stringa finale, contenente il test nel formato corretto Chrome Headless
-			final String testFormatoCorretto = header_librerie+"\n"+nomeClasse+"\n"+attributi_beforeAll+"\n"+codiceTestsCases+"\n"+afterAll_finoAllaFine;
+			final String testFormatoCorretto = header_librerie+"\n"+"public "+nomeClasse+"\n"+attributi_beforeAll+"\n"+codiceTestsCases+"\n"+afterAll_finoAllaFine;
 			
 			writer.write(testFormatoCorretto);
 			writer.flush();
