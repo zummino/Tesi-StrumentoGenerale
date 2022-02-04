@@ -1,11 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Github Actions Maven Build Example
+name: On Push - esecuzione Test di Regressione senza push dei report
 
 # Controls when the workflow will run
 on:
-  release:
-    types: [published]
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
 
 
  
