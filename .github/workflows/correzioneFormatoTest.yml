@@ -1,0 +1,70 @@
+# This is a basic workflow to help you get started with Actions
+ 
+name: On Push - Correzione formato test non ancora corretti
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+
+ 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    environment:
+      name: envForGithubActions
+    
+       
+   # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 1 - Checkout main branch from GitHub
+        uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Step 2 - Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8     
+             
+      - name: Step 3 - Unzip ed esecuzione progetto correzioneFormatoTest
+        run: |
+          echo "Proviamo ad unzippare"
+          unzip correzioneFormatoTest
+          echo "Unzippato"
+          ls -a
+          cd correzioneFormatoTest/target
+          echo "Vediamo contenuto cartella target"
+          ls -a
+          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
+         
+      - name: Step 4 - Verifica valori aggiornati file di test
+        run: |
+          cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest
+          ls -a
+          echo "Vediamo il valore dei file java corretti:"
+          cat *.java
+          
+      - name: Step 5 - Push dei file di test corretti
+        run: |
+          echo "Vediamo quali cartelle ci sono nella directory di partenza"
+          ls -a
+          git status
+          git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
+          git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
+          git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
+          echo "Andiamo ad aggiungere la cartella dei report"
+          git add ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/headless/yourtest
+          echo "Cartella aggiunta!"
+          git commit -m "commit da correzioneFormatoTest.yml"
+          git branch -M ${{ secrets.BRANCH_NAME }} 
+          git push -u origin ${{ secrets.BRANCH_NAME }}
+          
+          
