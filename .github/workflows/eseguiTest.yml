@@ -204,7 +204,7 @@ jobs:
       - name: Step 13 - Eseguire test maven
         run:  |
             cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless
-            sudo bash -c 'mvn -Dtest=${{ secrets.TEST_TO_EXECUTE }}  test site &'
+            sudo bash -c 'mvn -Dtest=${{ secrets.TEST_TO_EXECUTE }}  test site & wait $!'
             wait $!
                  
       - name: Step 14 - Visualizzare report test
