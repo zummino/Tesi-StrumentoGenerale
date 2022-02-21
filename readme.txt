@@ -4,18 +4,17 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 1) Creare il virtual environment “envForGithubActions” 
 
-2) Inserire le seguenti 9 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Inserire le seguenti 8 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
-DIR_FILE_FE: /home/runner/work/Tesi-AngularProject/Tesi-AngularProject/WebAppHooks/angular-java-example-master/src/main/ui/src/app/*.html
+FE_FILE_TYPE: html
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
 GRAMMAR_TYPE: angularjs
 NUMERO_SPLIT: 1
-PATH_REPOSITORY: /home/runner/work/Tesi-AngularProject/Tesi-AngularProject
 MIN_EXE_TEST: 5
 
-3) Sostituire la directory "inserisci-qui-la-tua-web-app" con una cartella contenente il progetto della propria applicazione web
+3) Inserire all'interno della directory "insert-here-yuor-web-app" la cartella contenente il progetto della propria applicazione web.
 
 4) Customizzare i file startBackEnd.sh e startFrontEnd.sh, in base al proprio caso d'uso.
 Vediamo degli esempi, 
