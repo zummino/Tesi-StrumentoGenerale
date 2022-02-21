@@ -41,11 +41,11 @@ jobs:
           cd target
           echo "Vediamo contenuto cartella target"
           ls -a
-          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno ${{ secrets.PATH_REPOSITORY }}/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
+          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
          
       - name: Step 4 - Verifica valori aggiornati file di test
         run: |
-          cd ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
+          cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
           ls -a
           echo "Vediamo il valore dei file java corretti:"
           cat *.java
@@ -59,7 +59,7 @@ jobs:
           git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
           git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
           echo "Andiamo ad aggiungere la cartella dei report"
-          git add ${{ secrets.PATH_REPOSITORY }}/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
+          git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
           echo "Cartella aggiunta!"
           git commit -m "push automatico effettuato da correzioneFormatoTest.yml"
           git branch -M ${{ secrets.BRANCH_NAME }} 
