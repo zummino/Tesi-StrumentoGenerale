@@ -35,3 +35,9 @@ echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
 npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
 npm start
+
+
+
+N.B. I file di test che si vogliono eseguire in modalità headless all'interno del container, devono
+essere storicizzati all'interno della directory:
+/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
