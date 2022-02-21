@@ -6,7 +6,7 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 2) Inserire le seguenti 8 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
-FE_FILE_TYPE: html
+DIR_FILE_FE: rootDirectory/**/*.html
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
