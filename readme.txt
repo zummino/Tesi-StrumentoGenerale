@@ -4,7 +4,7 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 1) Creare il virtual environment “envForGithubActions” 
 
-2) Inserire le seguenti 10 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Inserire le seguenti 9 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
 DIR_FILE_FE: /home/runner/work/Tesi-AngularProject/Tesi-AngularProject/WebAppHooks/angular-java-example-master/src/main/ui/src/app/*.html
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
