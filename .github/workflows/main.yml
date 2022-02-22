@@ -107,7 +107,7 @@ jobs:
             echo "INJECTION adesso..."
             echo "Visualizza versione di node"
             node -v
-            bash hookInjection.sh
+            bash /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/hookInjection.sh
             echo "Dopo l'injection!!!"
             git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
             git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
