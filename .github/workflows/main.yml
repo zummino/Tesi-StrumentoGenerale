@@ -107,14 +107,14 @@ jobs:
             echo "INJECTION adesso..."
             echo "Visualizza versione di node"
             node -v
-            node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/${{ secrets.DIR_FILE_FE }} --grammar ${{ secrets.GRAMMAR_TYPE }}
+            bash hookInjection.sh
             echo "Dopo l'injection!!!"
             git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
             git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
             git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
             git status
             echo "Andiamo ad effettuare il push dei file iniettati"
-            git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/${{ secrets.DIR_FILE_FE }}
+            git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/*
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             echo "`date +%Y-%m-%d_%H-%M-%S`" > timeCommit.txt
             git add timeCommit.txt
