@@ -4,7 +4,7 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 1) Creare il virtual environment “envForGithubActions” 
 
-2) Inserire le seguenti 8 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Inserire le seguenti 7 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
