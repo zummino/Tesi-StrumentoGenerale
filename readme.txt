@@ -19,16 +19,16 @@ MIN_EXE_TEST: 5
 Vediamo degli esempi, 
 
 startBackEnd.sh:
-cd /home/runner/work/Tesi-integrazioneProgettoEsterno/Tesi-integrazioneProgettoEsterno/angular-java-example-master
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master
 mvn clean install
-cd /home/runner/work/Tesi-integrazioneProgettoEsterno/Tesi-integrazioneProgettoEsterno/angular-java-example-master/target
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
 echo "Proviamo ad eseguire ${{ secrets.NOME_JAR_WEBAPP }}.jar"
 java -jar users-0.0.1-SNAPSHOT.jar
 
 startFrontEnd.sh:
-cd /home/runner/work/Tesi-integrazioneProgettoEsterno/Tesi-integrazioneProgettoEsterno/angular-java-example-master/src/main/ui
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/src/main/ui
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
 npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
