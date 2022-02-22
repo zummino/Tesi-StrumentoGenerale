@@ -4,12 +4,11 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 1) Creare il virtual environment “envForGithubActions” 
 
-2) Inserire le seguenti 7 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Inserire le seguenti 6 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
-GRAMMAR_TYPE: angularjs
 NUMERO_SPLIT: 1
 MIN_EXE_TEST: 5
 
@@ -38,11 +37,12 @@ npm start
 
 Ecco qui dei valori di esempio:
 
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file1.html --grammar ${{ secrets.GRAMMAR_TYPE }}
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file2.html --grammar ${{ secrets.GRAMMAR_TYPE }}
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/innerDirectory/file3.html --grammar ${{ secrets.GRAMMAR_TYPE }}
+node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file1.html --grammar angularjs
+node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file2.html --grammar angularjs
+node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/innerDirectory/file3.html --grammar angularjs
 
 bisogna quindi ripetere il comando "node main.js inject-hooks" n volte (dove n è il numero di file che si desidera instrumentare) specificando volta per volta la directory di dove si trova il file che si desidera instrumentare.
+NB: Il flag grammar può assumere uno dei seguenti valori {angularjs, freemarker, smarty, twigs}
 
 
 6) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
@@ -51,3 +51,9 @@ bisogna quindi ripetere il comando "node main.js inject-hooks" n volte (dove n �
 
 8) Si otterrà un file zip, estrarre il contenuto del file e pushare solamente i file di test (con estensione .java) estratti
 all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
+
+
+NB: Quando si crea un tag se si vuole che vengano iniettati gli hooks,, bisogna far terminare il nome del tag
+con i seguenti 6 caratteri "-Hooks", per esempio un nome valido potrebbe essere "v1_0-Hooks".
+NB: Non bisogna inserire metacaratteri nel nome di un tag, come per esempio il punto "."
+usare quindi tag del tipo "v1_0-Hooks" e non tag come "v1.0-Hooks"
