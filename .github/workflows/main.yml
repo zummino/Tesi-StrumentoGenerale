@@ -110,7 +110,7 @@ jobs:
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/Tesi-injector-plugin
             mvn clean install
             cd target
-            java -jar Tesi-injector-plugin-1.0-SNAPSHOT.jar ${{ secrets.FE_FILE_TYPE }} ${{ secrets.GRAMMAR_TYPE }} ${{ secrets.DIR_FILE_FE }} nocorrect ${GITHUB_REF#refs/tags/}
+            java -jar Tesi-injector-plugin-1.0-SNAPSHOT.jar ${{ secrets.FE_EXTENSION_TYPE }} ${{ secrets.GRAMMAR_TYPE }} ${{ secrets.DIR_FILE_FE }} nocorrect ${GITHUB_REF#refs/tags/}
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/test-hooks/test-guard
             bash /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/Tesi-injector-plugin/target/hookInjection.sh
             echo "Dopo l'injection!!!"
