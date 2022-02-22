@@ -11,6 +11,9 @@ NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
 NUMERO_SPLIT: 1
 MIN_EXE_TEST: 5
+FE_EXTENSION_TYPE: .html
+GRAMMAR_TYPE: angularjs
+DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app
 
 3) Inserire all'interno della directory "insert-here-yuor-web-app" la cartella contenente il progetto della propria applicazione web.
 
@@ -33,23 +36,11 @@ npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
 npm start
 
-5) Customizzare il file hookInjection.sh
+5) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
 
-Ecco qui dei valori di esempio:
+6) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
 
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file1.html --grammar angularjs
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/file2.html --grammar angularjs
-node main.js inject-hooks /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/rootWebApp/innerDirectory/file3.html --grammar angularjs
-
-bisogna quindi ripetere il comando "node main.js inject-hooks" n volte (dove n è il numero di file che si desidera instrumentare) specificando volta per volta la directory di dove si trova il file che si desidera instrumentare.
-NB: Il flag grammar può assumere uno dei seguenti valori {angularjs, freemarker, smarty, twigs}
-
-
-6) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
-
-7) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
-
-8) Si otterrà un file zip, estrarre il contenuto del file e pushare solamente i file di test (con estensione .java) estratti
+7) Si otterrà un file zip, estrarre il contenuto del file e pushare solamente i file di test (con estensione .java) estratti
 all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
 
 
