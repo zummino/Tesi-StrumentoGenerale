@@ -6,7 +6,6 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 2) Inserire le seguenti 8 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
-DIR_FILE_FE: rootDirectory/**/*.html
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
@@ -35,9 +34,11 @@ npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
 npm start
 
-5) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
+5) Customizzare il file hookInjection.sh
 
-6) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
+6) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
 
-7) Si otterrà un file zip, estrarre il contenuto del file e pushare solamente i file di test (con estensione .java) estratti
+7) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
+
+8) Si otterrà un file zip, estrarre il contenuto del file e pushare solamente i file di test (con estensione .java) estratti
 all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
