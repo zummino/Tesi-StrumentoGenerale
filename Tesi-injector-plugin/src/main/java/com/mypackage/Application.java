@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -63,7 +63,6 @@ public class Application {
                 e.printStackTrace();
             }
 
-
             //parte di correzione dei file di frontend
             if(args.length>=4 && args[3].equals("correct")){
                 feFilePathList.forEach(filePath -> {
@@ -80,12 +79,57 @@ public class Application {
                         System.out.println(fileContent);
                         System.out.println("[Correzione File FE] il valore con l'aggiunta dei timestamp è:");
                         String newContentFeFile = fileContent.toString();
-                        long timeNano = System.nanoTime();
-                        System.out.println("[Correzione File FE] timestamp da aggiungere: "+timeNano);
-                        System.out.println("[Correzione File FE] args[4] (tag) da aggiungere: "+args[4]);
-                        newContentFeFile = newContentFeFile.replaceAll(" x-test"," "+args[4]+"-"+timeNano+"-x-test");
+//                        Date date = new Date();
+                        long timeMilli = System.nanoTime();
+                        System.out.println("[Correzione File FE] timestamp da aggiungere: "+timeMilli);
+//                        System.out.println("[Correzione File FE] args[4] (tag) da aggiungere: "+args[4]);
+//                        newContentFeFile = newContentFeFile.replaceAll(" x-test"," "+args[4]+"-"+timeMilli+"-x-test");
+                        newContentFeFile = newContentFeFile.replaceAll(" x-test"," "+timeMilli+"-x-test");
                         System.out.println(newContentFeFile);
-                        //Aggiorare contenuto file
+                        //TODO: Sezione elimina doppioni
+                        List<String> wordBlackList = new ArrayList<>();
+                        //TODO: fare una replaceAll in newContentFeFile con un carattere vuoto di tutte le parole nella black list
+                        String[] temp = newContentFeFile.split("<");
+                        List<String> tempList = Arrays.asList(temp);
+                        tempList.forEach(elem -> {
+                                //eliminare occorrenza con timestamp più grande
+                                String[] words = elem.split(" ");
+                                List<String> wordsList = Arrays.asList(words);
+                                wordsList = wordsList.stream().filter(word -> word.contains("-x-test")).collect(Collectors.toList());
+                                int sizeList = wordsList.size();
+                                for(int i=0; i < sizeList; i++){
+                                    if(i!=0) wordBlackList.add(wordsList.get(i));
+                                }
+                        });
+                        List<String> realBlackWordList = new ArrayList<>();
+                        for(String blackWord: wordBlackList){
+                            if(blackWord.contains(">")){
+                                String[] word = blackWord.split(">");
+                                blackWord = word[0];
+                            }
+                            realBlackWordList.add(blackWord);
+                        }
+                        for(String blackWord: realBlackWordList){
+                            newContentFeFile = newContentFeFile.replaceAll(blackWord, "");
+                        }
+                        
+                        
+                        //TODO: Eliminare successivi due caratteri ad ogni parola contenente -x-test
+                        newContentFeFile = newContentFeFile.replaceAll(" >", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 0>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 1>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 2>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 3>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 4>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 5>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 6>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 7>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 8>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" 9>", ">");
+                        newContentFeFile = newContentFeFile.replaceAll(" >", ">");
+                        
+                        
+                        //Aggiornare contenuto file
                         FileWriter writerToUpdateFe = new FileWriter(filePath);
                         writerToUpdateFe.write(newContentFeFile);
                         writerToUpdateFe.close();
