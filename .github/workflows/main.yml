@@ -125,6 +125,9 @@ jobs:
           echo "Rechiamoci nella directory dove si trova lo script test-script-splitter"
           cd test-hooks/test-guard
           ls -a
+          echo "... Cancellazione e successivo aggiornamento di node_modules ..."
+          rm -rf node_modules/
+          npm update 
           echo "Proviamo ad eseguire lo script test-script-splitter"
           sudo bash -c 'node test-script-splitter.js --suites /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/TestHTML --dest /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/TestHTML/ReportSplitter/ReportSplit --num ${{ secrets.NUMERO_SPLIT }}' 
           echo "Script eseguito"
