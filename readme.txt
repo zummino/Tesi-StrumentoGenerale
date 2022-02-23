@@ -4,7 +4,7 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
 1) Creare il virtual environment “envForGithubActions” 
 
-2) Inserire le seguenti 6 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Inserire le seguenti 9 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
@@ -44,7 +44,5 @@ npm start
 all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
 
 
-NB: Quando si crea un tag se si vuole che vengano iniettati gli hooks,, bisogna far terminare il nome del tag
-con i seguenti 6 caratteri "-Hooks", per esempio un nome valido potrebbe essere "v1_0-Hooks".
 NB: Non bisogna inserire metacaratteri nel nome di un tag, come per esempio il punto "."
 usare quindi tag del tipo "v1_0-Hooks" e non tag come "v1.0-Hooks"
