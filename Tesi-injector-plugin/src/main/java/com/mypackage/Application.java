@@ -37,6 +37,7 @@ public class Application {
             System.out.println("La lista dei file di FE è:");
             System.out.println(feFilePathList);
             List<String> commmandList = createHookInjectionShContent(feFilePathList, args[1]);
+            commmandList.add(0,"cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/test-hooks/test-guard");
             System.out.println("La lista dei comandi da inserire nel file hookInjection.sh:");
             System.out.println(commmandList);
 
@@ -51,6 +52,16 @@ public class Application {
             });
             System.out.println("Successfully wrote to the file.");
             myWriter.close();
+
+            try{
+                ProcessBuilder pb = new ProcessBuilder();
+                pb.command("bash", "-c", "bash /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/Tesi-injector-plugin/target/hookInjection.sh");
+                Process p = pb.start();
+                p.waitFor();
+                System.out.println("Script executed..");
+            }catch(Exception e){
+                e.printStackTrace();
+            }
 
 
             //parte di correzione dei file di frontend
@@ -69,9 +80,10 @@ public class Application {
                         System.out.println(fileContent);
                         System.out.println("[Correzione File FE] il valore con l'aggiunta dei timestamp è:");
                         String newContentFeFile = fileContent.toString();
-                        Date date = new Date();
-                        long timeMilli = date.getTime();
-                        newContentFeFile = newContentFeFile.replaceAll(" x-test"," "+args[4]+"-"+timeMilli+"-x-test");
+                        long timeNano = System.nanoTime();
+                        System.out.println("[Correzione File FE] timestamp da aggiungere: "+timeNano);
+                        System.out.println("[Correzione File FE] args[4] (tag) da aggiungere: "+args[4]);
+                        newContentFeFile = newContentFeFile.replaceAll(" x-test"," "+args[4]+"-"+timeNano+"-x-test");
                         System.out.println(newContentFeFile);
                         //Aggiorare contenuto file
                         FileWriter writerToUpdateFe = new FileWriter(filePath);
