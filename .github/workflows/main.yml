@@ -87,53 +87,8 @@ jobs:
           npm install bcrypt
           npm fund
           echo "vedi se ha fatto bene o no" 
-        
-      - name: Step 5 - Instrumenta l'applicazione iniettando gli Hooks
-        run: |
-            cd test-hooks
-            cd test-guard
-            ls -a
-            echo "Prima dell injection! "
-            echo "Visualizza versione di node"
-            node -v
-            echo "... Cancellazione e successivo aggiornamento di node_modules ..."
-            rm -rf node_modules/
-            npm update          
-            echo "entra nel if solamente se si intendono utilizzare gli Hooks nel progetto"
-            varTemp=$(echo "${GITHUB_REF#refs/tags/}" | tail -c 6)
-            echo "varTemp"
-            if [ "$varTemp" == "Hooks" ]; then         
-            echo "Sono entrato nel if"
-            echo "INJECTION adesso..."
-            echo "Visualizza versione di node"
-            node -v
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/Tesi-injector-plugin
-            mvn clean install
-            cd target
-            sudo bash -c 'java -jar Tesi-injector-plugin-1.0-SNAPSHOT.jar ${{ secrets.FE_EXTENSION_TYPE }} ${{ secrets.GRAMMAR_TYPE }} ${{ secrets.DIR_FILE_FE }} correct nomeTag'
-            echo "Dopo l'injection!!!"
-            git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
-            git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
-            git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
-            git status
-            echo "Andiamo ad effettuare il push dei file iniettati"
-            git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/*
-            cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
-            echo "`date +%Y-%m-%d_%H-%M-%S`" > timeCommit.txt
-            git add timeCommit.txt
-            echo "File aggiunti!"
-            git commit -m "Commit dal file yml dei file iniettati"
-            git tag --list
-            echo "Andiamo ad aggiungere, se non ci era già, il tag corrente"
-            git tag --force ${GITHUB_REF#refs/tags/}
-            echo "Vediamo la nuova lista di tag:"
-            git tag --list
-            git push -u origin ${GITHUB_REF#refs/tags/} --force
-            echo "Push effettuato"            
-            fi
-            echo "Fuori dal if"        
-            
-      - name: Step 6 - Creazione directory Test Suite
+                 
+      - name: Step 5 - Creazione directory Test Suite
         run: |
           ls -a
           if [ ! -d "/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite" ]; then
@@ -149,7 +104,7 @@ jobs:
             sudo mkdir TestHTML
           fi
           
-      - name: Step 7 - Pulizia directory per split test html
+      - name: Step 6 - Pulizia directory per split test html
         run: |
           ls -a
           echo "Rechiamoci nella directory TestHTML"
@@ -164,7 +119,7 @@ jobs:
           sudo mkdir ReportSplitter
           echo "cartella creata"
             
-      - name: Step 8 - Esecuzione script per lo split dei test html
+      - name: Step 7 - Esecuzione script per lo split dei test html
         run: |
           ls -a
           echo "Rechiamoci nella directory dove si trova lo script test-script-splitter"
@@ -180,17 +135,17 @@ jobs:
           cd ReportSplit0
           ls -a
         
-      - name: Step 9 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
+      - name: Step 8 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             bash startBackEnd.sh &
             
-      - name: Step 10 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
+      - name: Step 9 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
             bash startFrontEnd.sh &
           
-      - name: Step 11 - Install Chrome Headless
+      - name: Step 10 - Install Chrome Headless
         run: |
           sudo apt-get update
           sudo apt-get upgrade
@@ -201,7 +156,7 @@ jobs:
           sudo apt-get -f install
           google-chrome-stable --headless --disable-gpu    
           
-      - name: Step 12 - Install Chrome-Driver for test junit
+      - name: Step 11 - Install Chrome-Driver for test junit
         run:  |
             wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
             echo "Vedo se si trova il punto zip"
@@ -218,13 +173,13 @@ jobs:
             echo "Contenuto della cartella chromedriver_v94_linux64"
             ls -a         
           
-      - name: Step 13 - Eseguire test maven
+      - name: Step 12 - Eseguire test maven
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
             sudo bash -c 'mvn test site &'
             sleep ${{ secrets.MIN_EXE_TEST }}m
                  
-      - name: Step 14 - Visualizzare report test
+      - name: Step 13 - Visualizzare report test
         run: |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target/surefire-reports
             ls -a 
@@ -232,7 +187,7 @@ jobs:
             cat *.txt
             echo "Fine visualizzazione report!!!"                
        
-      - name: Step 15 - Spostamento report in directory corretta
+      - name: Step 14 - Spostamento report in directory corretta
         run: |  
           cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/target
           echo "Visualizziamo se c'è la cartella surefire-reports"
@@ -243,7 +198,7 @@ jobs:
           ls -a
           sudo cp -r ${GITHUB_REF#refs/tags/} /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite
           
-      - name: Step 16 - Push dei report
+      - name: Step 15 - Push dei report
         run: |
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a
@@ -263,7 +218,7 @@ jobs:
           git push -u origin ${GITHUB_REF#refs/tags/} --force
           echo "Push effettuato"         
           
-      - name: Step 17 - Unzip progetto "Miglioramento report test"
+      - name: Step 16 - Unzip progetto "Miglioramento report test"
         run: |
           ls 
           echo "Unzip del progetto"
@@ -271,7 +226,7 @@ jobs:
           echo "Progetto zippato"
           ls                    
           
-      - name: Step 18 - Esecuzione progetto "Miglioramento report test"
+      - name: Step 17 - Esecuzione progetto "Miglioramento report test"
         run: |    
           echo "Andiamo nella directory dove si trova il file jar eseguibile"
           cd miglioramentoReportTest/target
@@ -284,12 +239,12 @@ jobs:
           echo "Vediamo il contenuto del file xls di report unificato!!!"
           cat tabellaReportTest.xls
           
-      - name: Step 19 - Spostamento report xls in cartella dei report txt
+      - name: Step 18 - Spostamento report xls in cartella dei report txt
         run: | 
           cd miglioramentoReportTest/target
           sudo cp tabellaReportTest.xls /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/}
           
-      - name: Step 20 - Commit del report xls
+      - name: Step 19 - Commit del report xls
         run: | 
           echo "Vediamo quali cartelle ci sono nella directory di partenza"
           ls -a          
