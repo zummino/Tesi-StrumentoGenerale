@@ -2,10 +2,14 @@ Strumento Generale sviluppato nella tesi di laurea.
 
 Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
-1) Creare il virtual environment “envForGithubActions” 
+
+1) Inserire all'interno della directory "insert-here-yuor-web-app" la cartella contenente il progetto della propria applicazione web.
 
 
-2) Inserire le seguenti 9 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
+2) Creare il virtual environment “envForGithubActions” 
+
+
+3) Inserire le seguenti 9 variabili d'ambiente, customizzando i valori di esempio qui riportati in base al proprio caso d'uso:
 BRANCH_NAME: master
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
@@ -17,9 +21,6 @@ GRAMMAR_TYPE: angularjs
 DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app
 
 NB: I GRAMMAR_TYPE consentiti sono: ['angularjs', 'html', 'php', 'smarty', 'twig', 'freemarker']
-
-
-3) Inserire all'interno della directory "insert-here-yuor-web-app" la cartella contenente il progetto della propria applicazione web.
 
 
 4) Customizzare i file startBackEnd.sh e startFrontEnd.sh, in base al proprio caso d'uso.
