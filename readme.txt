@@ -58,20 +58,23 @@ npm start
 9) Eseguire l'applicazione web in locale
 
 
-10) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
+10) Aprire Katalon Recorder e nella sezione "Extension script" aggiungere il file "attributeHooksLocators.js" reperibile nel corrente repository.
 
 
-11) Si otterrà un file zip, estrarre il contenuto del file e pushare all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
+11) Registrare casi di test con Katalon Recorder ed esportarli in modalita (JUnit + WebDriver)
+
+
+12) Si otterrà un file zip, estrarre il contenuto del file e pushare all'interno della directory ./project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/
 solamente i file di test (con estensione .java) estratti
 
 
-12) Al push verrà triggerata l'esecuzione del file correzioneFormatoTest.yml, attendere quindi il termine della sua esecuzione
+13) Al push verrà triggerata l'esecuzione del file correzioneFormatoTest.yml, attendere quindi il termine della sua esecuzione
 
 
-13) Creare una nuova release, triggerando quindi l'esecuzione del file main.yml
+14) Creare una nuova release, triggerando quindi l'esecuzione del file main.yml
 
 
-14) Al termine dell'esecuzione del file main.yml, all'interno del tag creato, nella directory ./TestSuite/nomeTagCreato si troveranno tutti i report autogenerati inerenti ai test di regressione eseguiti.
+15) Al termine dell'esecuzione del file main.yml, all'interno del tag creato, nella directory ./TestSuite/nomeTagCreato si troveranno tutti i report autogenerati inerenti ai test di regressione eseguiti.
 
 NB: Non bisogna inserire metacaratteri nel nome di un tag, come per esempio il punto "."
 usare quindi tag del tipo "v1_0-Hooks" e non tag come "v1.0-Hooks"
