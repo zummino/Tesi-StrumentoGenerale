@@ -174,7 +174,8 @@ jobs:
             echo "Vediamo se ha scaricato il driver"
             cd chromedriver_v94_linux64
             echo "Contenuto della cartella chromedriver_v94_linux64"
-            ls -a         
+            ls -a
+            sudo cp chromedriver /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
           
       - name: Step 12 - Eseguire test maven
         run:  |
@@ -240,12 +241,12 @@ jobs:
           echo "Vediamo il file xls di report unificato se c'è"
           ls -a 
           echo "Vediamo il contenuto del file xls di report unificato!!!"
-          cat tabellaReportTest.xls
+          sudo mv tabellaReportTest.xls ${GITHUB_REF#refs/tags/}.xls
           
       - name: Step 18 - Spostamento report xls in cartella dei report txt
         run: | 
           cd miglioramentoReportTest/target
-          sudo cp tabellaReportTest.xls /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/}
+          sudo cp ${GITHUB_REF#refs/tags/}.xls /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/TestSuite/${GITHUB_REF#refs/tags/}
           
       - name: Step 19 - Commit del report xls
         run: | 
