@@ -68,7 +68,8 @@ npm start
 solamente i file di test (con estensione .java) estratti
 
 
-13) Al push verrà triggerata l'esecuzione del file correzioneFormatoTest.yml, attendere quindi il termine della sua esecuzione
+13) Al push verrà triggerata l'esecuzione del file mainOnPush.yml che si occuperà di correggere il formato
+dei file di test pushati (in modo da renderli eseguibili all'interno di un container), attendere quindi il termine della sua esecuzione
 
 
 14) Creare una nuova release, triggerando quindi l'esecuzione del file main.yml
