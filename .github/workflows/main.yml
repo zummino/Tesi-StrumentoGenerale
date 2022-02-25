@@ -175,7 +175,6 @@ jobs:
             cd chromedriver_v94_linux64
             echo "Contenuto della cartella chromedriver_v94_linux64"
             ls -a
-            sudo cp chromedriver /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless
           
       - name: Step 12 - Eseguire test maven
         run:  |
