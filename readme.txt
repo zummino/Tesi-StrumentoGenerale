@@ -5,7 +5,7 @@ Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 1) Fare la fork del seguente repository: https://github.com/gianlucat97/Tesi-StrumentoGenerale.git
 
 
-2) Dopo aver creato un proprio repository, fare la clone in locale del repository creato.
+2) Dopo aver creato il proprio repository (tramite la fork), fare la clone in locale del repository creato.
 
 
 3) Inserire all'interno della directory "insert-here-yuor-web-app" la cartella contenente il progetto della propria applicazione web.
