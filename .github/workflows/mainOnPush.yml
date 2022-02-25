@@ -109,3 +109,38 @@ jobs:
             git branch -M ${{ secrets.BRANCH_NAME }} 
             git push -u origin ${{ secrets.BRANCH_NAME }} --force
             echo "Push effettuato" 
+            
+            
+      - name: Step 6 - Esecuzione progetto correzioneFormatoTest
+        run: |
+          cd correzioneFormatoTest
+          mvn clean install
+          cd target
+          echo "Vediamo contenuto cartella target"
+          ls -a
+          java -jar correzioneFormatoTest-0.0.1-jarCorrezioneFormatoTest.jar /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver com.example.TesiIntegrazioneProgettoEsterno                   
+         
+      - name: Step 7 - Verifica valori aggiornati file di test
+        run: |
+          cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
+          ls -a
+          echo "Vediamo il valore dei file java corretti:"
+          cat *.java
+          
+      - name: Step 8 - Push dei file di test corretti
+        run: |
+          echo "Vediamo quali cartelle ci sono nella directory di partenza"
+          ls -a
+          git status
+          git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
+          git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
+          git config --global user.password "${{ secrets.PASSWORD_ACCOUNT_GITHUB }}"
+          echo "Andiamo ad aggiungere la cartella dei report"
+          git add /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno
+          echo "Cartella aggiunta!"
+          cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
+          echo "`date +%Y-%m-%d_%H-%M-%S`" > timeCommit.txt
+          git add timeCommit.txt
+          git commit -m "push automatico per la correzione del formato dei test"
+          git branch -M ${{ secrets.BRANCH_NAME }} 
+          git push -u origin ${{ secrets.BRANCH_NAME }}
