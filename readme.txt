@@ -34,46 +34,38 @@ Vediamo degli esempi,
 startBackEnd.sh:
 echo "Inizio comandi installazione precondizioni"
 sudo apt update
-sudo apt install openjdk-8-jdk openjdk-8-jre
+sudo apt install openjdk-11-jdk openjdk-11-jre
 echo "Installata versione di java numero"
 java -version 
 
 echo "Inizio comandi esecuzione Backend"
-cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root/backend
 mvn clean install
-cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/target
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root/backend/target
 echo "Vediamo quali file jar si trovano in cartella target"
 ls -a
-java -jar users-0.0.1-SNAPSHOT.jar
-
+java -jar backend-0.0.1-SNAPSHOT.jar &
 
 
 startFrontEnd.sh:
 echo "Inizio comandi installazione precondizioni"
-sudo apt update
-sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-curl -sL https://deb.nodesource.com/setup_10.x | sudo bash
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
+curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+cat nodesource_setup.sh
+sudo bash nodesource_setup.sh
 sudo apt install nodejs
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-sudo n 10.18.0        
-echo "Versione di node: "
+echo "versione di node installata"
 node -v
-echo "Versione di npm: "
-npm -v          
-npm install
-echo "Provo ad INSTALLARE bcrypt"
-npm install bcrypt
-npm fund
+echo "Installazione di npm"
+sudo apt install npm
 echo "Fine comandi installazione Node"
 
 echo "Inizio comandi esecuzione Frontend"
-cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/src/main/ui
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root/frontend
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
 npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
-npm start
+npm start &
 
 
 7) Andare nel tab "Actions" ed attivare i "Workflows" cliccando sul button "I understand my workflows, go ahead and enable them".
