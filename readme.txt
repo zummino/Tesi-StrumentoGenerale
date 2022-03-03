@@ -32,6 +32,13 @@ NB: I GRAMMAR_TYPE consentiti sono: ['angularjs', 'html', 'php', 'smarty', 'twig
 Vediamo degli esempi, 
 
 startBackEnd.sh:
+echo "Inizio comandi installazione precondizioni"
+sudo apt update
+sudo apt install openjdk-8-jdk openjdk-8-jre
+echo "Installata versione di java numero"
+java -version 
+
+echo "Inizio comandi esecuzione Backend"
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master
 mvn clean install
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/target
@@ -40,7 +47,29 @@ ls -a
 echo "Proviamo ad eseguire ${{ secrets.NOME_JAR_WEBAPP }}.jar"
 java -jar users-0.0.1-SNAPSHOT.jar
 
+
+
 startFrontEnd.sh:
+echo "Inizio comandi installazione precondizioni"
+sudo apt update
+sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_10.x | sudo bash
+sudo apt install nodejs
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+sudo n 10.18.0        
+echo "Versione di node: "
+node -v
+echo "Versione di npm: "
+npm -v          
+npm install
+echo "Provo ad INSTALLARE bcrypt"
+npm install bcrypt
+npm fund
+echo "Fine comandi installazione Node"
+
+echo "Inizio comandi esecuzione Frontend"
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-java-example-master/src/main/ui
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
 npm install
