@@ -19,7 +19,6 @@ BRANCH_NAME: master
 EMAIL_ACCOUNT_GITHUB: t*********@gmail.com
 NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
-MIN_EXE_TEST: 5
 FE_EXTENSION_TYPE: .html
 GRAMMAR_TYPE: angularjs
 DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app
