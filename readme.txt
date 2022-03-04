@@ -21,7 +21,7 @@ NOME_ACCOUNT_GITHUB: g*********
 PASSWORD_ACCOUNT_GITHUB: *********
 FE_EXTENSION_TYPE: .html
 GRAMMAR_TYPE: angularjs
-DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-web-app
+DIR_FILE_FE: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/root-frontend-web-app
 
 NB: I GRAMMAR_TYPE consentiti sono: ['angularjs', 'html', 'php', 'smarty', 'twig', 'freemarker']
 
