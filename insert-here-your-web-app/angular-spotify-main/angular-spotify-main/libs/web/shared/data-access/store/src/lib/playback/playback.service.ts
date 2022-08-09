@@ -70,9 +70,9 @@ export class PlaybackService {
       console.error(message);
     });
 
-    player.addListener('account_error', ({ message }) => {
-      alert(`You account has to have Spotify Premium for playing music ${message}`);
-    });
+//    player.addListener('account_error', ({ message }) => {
+//      alert(`You account has to have Spotify Premium for playing music ${message}`);
+//    });
 
     player.addListener('playback_error', ({ message }) => {
       console.error(message);
