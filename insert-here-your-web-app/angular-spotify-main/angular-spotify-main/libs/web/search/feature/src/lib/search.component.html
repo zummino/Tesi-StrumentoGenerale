@@ -1,6 +1,5 @@
-<div class="mb-6 content-spacing">
-  <!-- Search Input -->
-  <div class="search-input-container">
+<div class="mb-6 content-spacing" x448594643043-x-test-tpl-1>  <!-- Search Input -->
+  <div class="search-input-container" x448594643043-x-test-hook-2>
     <as-input
       class="search-control"
       [control]="searchControl"
@@ -10,39 +9,39 @@
       [autoFocus]="true"
       [rounded]="true"
       [enableClearButton]="true"
-    >
+     x448594643043-x-test-hook-3>
     </as-input>
-    <as-spinner class="ml-4" *ngIf="isLoading$ | async"></as-spinner>
+    <as-spinner class="ml-4" *ngIf="isLoading$ | async" x448594643043-x-test-hook-4></as-spinner>
   </div>
 
   <!-- Results lists -->
-  <ng-container *ngIf="data$ | async as data">
+  <ng-container *ngIf="data$ | async as data" x448594643043-x-test-hook-5>
     <!-- Tracks -->
-    <div *ngIf="data?.tracks?.items?.length">
-      <h2 class="mt-8 mb-4 text-heading">Songs</h2>
-      <as-media-table-header>
-        <div class="album-tracks-grid">
-          <div>#</div>
-          <div class="text-xs uppercase ellipsis-one-line">Title</div>
-          <svg-icon [key]="'clock'" title="Duration"></svg-icon>
+    <div *ngIf="data?.tracks?.items?.length" x448594643043-x-test-hook-6>
+      <h2 class="mt-8 mb-4 text-heading" x448594643043-x-test-hook-7>Songs</h2>
+      <as-media-table-header x448594643043-x-test-hook-8>
+        <div class="album-tracks-grid" x448594643043-x-test-hook-9>
+          <div x448594643043-x-test-hook-10>#</div>
+          <div class="text-xs uppercase ellipsis-one-line" x448594643043-x-test-hook-11>Title</div>
+          <svg-icon [key]="'clock'" title="Duration" x448594643043-x-test-hook-12></svg-icon>
         </div>
       </as-media-table-header>
 
-      <div class="mb-8">
+      <div class="mb-8" x448594643043-x-test-hook-13>
         <as-album-track
           *ngFor="let item of data?.tracks?.items; let idx = index"
           [track]="item"
           [contextUri]="item.album.uri"
           [index]="idx + 1"
-        >
+         x448594643043-x-test-hook-14>
         </as-album-track>
       </div>
     </div>
 
     <!-- Artists -->
-    <div *ngIf="data?.artists?.items?.length">
-      <h2 class="mt-8 mb-4 text-heading">Artists</h2>
-      <div class="common-grid">
+    <div *ngIf="data?.artists?.items?.length" x448594643043-x-test-hook-15>
+      <h2 class="mt-8 mb-4 text-heading" x448594643043-x-test-hook-16>Artists</h2>
+      <div class="common-grid" x448594643043-x-test-hook-17>
         <as-media
           *ngFor="let item of data?.artists?.items"
           [title]="item.name"
@@ -52,15 +51,15 @@
           [description]="item.type | titlecase"
           [roundedImage]="true"
           (togglePlay)="togglePlay($event, item.uri)"
-        >
+         x448594643043-x-test-hook-18>
         </as-media>
       </div>
     </div>
 
     <!-- Albums -->
-    <div *ngIf="data?.albums?.items?.length">
-      <h2 class="mt-8 mb-4 text-heading">Albums</h2>
-      <div class="common-grid">
+    <div *ngIf="data?.albums?.items?.length" x448594643043-x-test-hook-19>
+      <h2 class="mt-8 mb-4 text-heading" x448594643043-x-test-hook-20>Albums</h2>
+      <div class="common-grid" x448594643043-x-test-hook-21>
         <as-media
           *ngFor="let item of data?.albums?.items"
           [title]="item.name"
@@ -69,15 +68,15 @@
           [imageUrl]="item.images[0]?.url"
           [routerUrl]="'/albums/' + item.id"
           (togglePlay)="togglePlay($event, item.uri)"
-        >
+         x448594643043-x-test-hook-22>
         </as-media>
       </div>
     </div>
 
     <!-- Playlists -->
-    <div *ngIf="data?.playlists?.items?.length">
-      <h2 class="mt-8 mb-4 text-heading">Playlists</h2>
-      <div class="common-grid">
+    <div *ngIf="data?.playlists?.items?.length" x448594643043-x-test-hook-23>
+      <h2 class="mt-8 mb-4 text-heading" x448594643043-x-test-hook-24>Playlists</h2>
+      <div class="common-grid" x448594643043-x-test-hook-25>
         <as-media
           *ngFor="let item of data?.playlists?.items"
           [title]="item.name"
@@ -86,7 +85,7 @@
           [imageUrl]="item.images[0]?.url"
           [routerUrl]="'/playlist/' + item.id"
           (togglePlay)="togglePlay($event, item.uri)"
-        >
+         x448594643043-x-test-hook-26>
         </as-media>
       </div>
     </div>

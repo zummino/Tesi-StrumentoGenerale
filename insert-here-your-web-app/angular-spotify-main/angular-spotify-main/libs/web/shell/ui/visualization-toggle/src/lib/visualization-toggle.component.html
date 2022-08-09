@@ -1,14 +1,13 @@
-<div
-  nz-tooltip
+<div  nz-tooltip
   [nzTooltipTitle]="titleTmpl"
   *ngrxLet="isVisualizationOn$ as isOn"
   class="flex items-center"
->
+ x448655725160-x-test-tpl-1>
   <svg-icon
     *ngIf="isPlaying$ | async"
     class="mr-4 text-primary"
     [key]="'audio-animated'"
-  ></svg-icon>
-  <nz-switch [ngModel]="isOn" (ngModelChange)="toggle($event)"> </nz-switch>
-  <ng-template #titleTmpl> Turn {{ isOn ? 'off' : 'on' }} the cool visualizer! </ng-template>
+   x448655725160-x-test-hook-2></svg-icon>
+  <nz-switch [ngModel]="isOn" (ngModelChange)="toggle($event)" x448655725160-x-test-hook-3> </nz-switch>
+  <ng-template #titleTmpl x448655725160-x-test-hook-4> Turn {{ isOn ? 'off' : 'on' }} the cool visualizer! </ng-template>
 </div>
