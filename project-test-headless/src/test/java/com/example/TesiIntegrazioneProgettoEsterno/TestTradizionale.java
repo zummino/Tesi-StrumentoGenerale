@@ -33,17 +33,19 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTradizionale_v_1_0() throws Exception {
+public void testTradizionale_release_1_0() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.id("login-username")).click();
     driver.findElement(By.id("login-username")).clear();
     driver.findElement(By.id("login-username")).sendKeys("odoobnb@gmail.com");
+    driver.findElement(By.id("login-password")).click();
     driver.findElement(By.id("login-password")).clear();
     driver.findElement(By.id("login-password")).sendKeys("provaprova93");
     driver.findElement(By.xpath("//button[@id='login-button']/div")).click();
+    //driver.get("http://localhost:4200/");
     driver.findElement(By.xpath("//a[contains(text(),'Search')]")).click();
-    //driver.findElement(By.xpath("//input")).click();
-    //driver.findElement(By.xpath("//input")).clear();
+   // driver.findElement(By.xpath("//input")).click();
+   // driver.findElement(By.xpath("//input")).clear();
     driver.findElement(By.xpath("//input")).sendKeys("ciao");
     driver.findElement(By.xpath("//a[contains(text(),'Gemitaiz')]")).click();
   }
