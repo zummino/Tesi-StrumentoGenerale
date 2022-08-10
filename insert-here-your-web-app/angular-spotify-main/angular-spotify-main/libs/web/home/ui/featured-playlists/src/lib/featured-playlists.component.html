@@ -1,5 +1,4 @@
-<ng-container *ngIf="featuredPlaylists$ | async as data" x448578439126-x-test-tpl-1>  <h2 class="mt-8 mb-4 text-heading" x448578439126-x-test-hook-2>{{ data.message }}</h2>  <div class="common-grid" x448578439126-x-test-hook-3>    <as-media *ngFor="let playlist of data.playlists.items"
-              [title]="playlist.name"
+<ng-container *ngIf="featuredPlaylists$ | async as data" x448578439126-x-test-tpl-1>  <h2 class="mt-8 mb-4 text-heading" x448578439126-x-test-hook-2>{{ data.message }}</h2>  <div class="common-grid" x448578439126-x-test-hook-3>    <as-media *ngFor="let playlist of data.playlists.items"              [title]="playlist.name"
               [description]="playlist.description"
               [imageUrl]="playlist.images[0]?.url!"
               [uri]="playlist.uri"
