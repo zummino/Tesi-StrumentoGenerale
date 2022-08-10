@@ -12,7 +12,7 @@ sudo apt install npm
 echo "Fine comandi installazione Node"
 
 echo "Inizio comandi esecuzione Frontend"
-cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main
+cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
 npm install
 echo "Installazione npm effettuata, prossimo comando: npm start"
