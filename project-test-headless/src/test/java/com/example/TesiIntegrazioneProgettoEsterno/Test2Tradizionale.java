@@ -43,7 +43,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.id("login-password")).sendKeys("provaprova93");
     driver.findElement(By.xpath("//button[@id='login-button']/div/p")).click();
     driver.findElement(By.xpath("//a[contains(text(),'Ricerca')]")).click();
-    driver.findElement(By.xpath("//input")).clear();
+    //driver.findElement(By.xpath("//input")).clear();
     driver.findElement(By.xpath("//input")).sendKeys("ciao");
     driver.findElement(By.xpath("//a[contains(text(),'Gemitaiz')]")).click();
   }
