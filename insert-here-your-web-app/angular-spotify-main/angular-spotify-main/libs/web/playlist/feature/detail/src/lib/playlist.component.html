@@ -1,5 +1,4 @@
-<div class="content-spacing" *ngIf="playlist$ | async as playlist" x448590819892-x-test-tpl-1>  <as-media-summary    type="Playlist"    [title]="playlist.name"    [imageUrl]="playlist.images[0]?.url"    [description]="playlist.description"    [artist]="playlist.owner.display_name"    [trackCount]="playlist.tracks.total"    [likesCount]="$any(playlist)?.followers?.total"   x448590819892-x-test-hook-2>  </as-media-summary>  <div class="pt-0 pb-6 playlist-action" x448590819892-x-test-hook-3>
-    <as-play-button
+<div class="content-spacing" *ngIf="playlist$ | async as playlist" x448590819892-x-test-tpl-1>  <as-media-summary    type="Playlist"    [title]="playlist.name"    [imageUrl]="playlist.images[0]?.url"    [description]="playlist.description"    [artist]="playlist.owner.display_name"    [trackCount]="playlist.tracks.total"    [likesCount]="$any(playlist)?.followers?.total"   x448590819892-x-test-hook-2>  </as-media-summary>  <div class="pt-0 pb-6 playlist-action" x448590819892-x-test-hook-3>    <as-play-button
       [large]="true"
       [primary]="true"
       [isPlaying]="isPlaylistPlaying$ | async"
