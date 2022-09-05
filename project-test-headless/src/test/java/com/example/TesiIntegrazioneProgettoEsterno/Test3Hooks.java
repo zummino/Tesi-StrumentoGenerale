@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
-public class TestHooks {
+public class Test3Hooks {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
