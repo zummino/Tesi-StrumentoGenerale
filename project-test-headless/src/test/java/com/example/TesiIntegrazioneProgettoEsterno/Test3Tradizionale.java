@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
-public class TestTradizionale {
+public class Test3Tradizionale{
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
