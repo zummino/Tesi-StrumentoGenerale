@@ -1,19 +1,19 @@
-<h1 class="px-6 pb-1 text-xs font-bold text-white uppercase text-opacity-60" x448625424954-x-test-tpl-1>Playlists</h1>
-<ul x448625424954-x-test-tpl-2>  
-	<li class="px-2" x265959656913-x-test-hook-3>    <a routerLink=""       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" x265959656913-x-test-hook-4>      HomePage    </a> </li>
-	<li class="px-2" x265959656913-x-test-hook-5>    <a routerLink="/browse"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" x265959656913-x-test-hook-6>      Esplora    </a> </li>
-	<li class="px-2" x214625779412-x-test-hook-3>    <a routerLink="/search"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" x214625779412-x-test-hook-4>      Search    </a> </li>
-	<li class="px-2" x448625424954-x-test-hook-3>    <a routerLink="/collection/tracks"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" x448625424954-x-test-hook-4>      Liked songs    </a> </li>
+<h1 class="px-6 pb-1 text-xs font-bold text-white uppercase text-opacity-60" >Playlists</h1>
+<ul >  
+	<li class="px-2" >    <a routerLink=""       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" >      HomePage    </a> </li>
+	<li class="px-2">    <a routerLink="/browse"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" >      Esplora    </a> </li>
+	<li class="px-2" >    <a routerLink="/search"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" >      Search    </a> </li>
+	<li class="px-2">    <a routerLink="/collection/tracks"       routerLinkActive="active"       class="flex items-center px-4 nav-link link-subtle" >      Liked songs    </a> </li>
 </ul>
 
-<div class="mx-6 separator" x448625424954-x-test-tpl-5></div>
+<div class="mx-6 separator"></div>
 <ul class="playlists"
-    *ngIf="playlists$ | async as playlists" x448625424954-x-test-tpl-6>
+    *ngIf="playlists$ | async as playlists">
   <li class="p-2"
-      *ngFor="let playlist of playlists.items" x448625424954-x-test-hook-7>
-    <as-nav-playlist [playlist]="playlist" x448625424954-x-test-hook-8></as-nav-playlist>
+      *ngFor="let playlist of playlists.items">
+    <as-nav-playlist [playlist]="playlist"></as-nav-playlist>
   </li>
 </ul>
 <as-spinner *ngIf="isPlaylistsLoading$ | async"
-            [size]="'lg'" x448625424954-x-test-tpl-9>
+            [size]="'lg'">
 </as-spinner>
