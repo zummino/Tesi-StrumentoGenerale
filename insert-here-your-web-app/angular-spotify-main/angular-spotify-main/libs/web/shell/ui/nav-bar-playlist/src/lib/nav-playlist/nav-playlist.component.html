@@ -1,5 +1,4 @@
-<a  [routerLink]="playlistWithRoute.routeUrl"  *ngrxLet="isPlaylistPlaying$ as isPlaying"  routerLinkActive="active"  [title]="playlistWithRoute.name"  class="playlist-link link-subtle" x448626282666-x-test-tpl-1>  <span class="ellipsis-one-line" x448626282666-x-test-hook-2>    {{ playlistWithRoute.name }}  </span>  <as-play-button    *ngIf="isPlaying"    class="pl-4"    [flatIcon]="true"    [isShowVolumeIcon]="true"
-    [isPlaying]="isPlaying"
+<a  [routerLink]="playlistWithRoute.routeUrl"  *ngrxLet="isPlaylistPlaying$ as isPlaying"  routerLinkActive="active"  [title]="playlistWithRoute.name"  class="playlist-link link-subtle" x448626282666-x-test-tpl-1>  <span class="ellipsis-one-line" x448626282666-x-test-hook-2>    {{ playlistWithRoute.name }}  </span>  <as-play-button    *ngIf="isPlaying"    class="pl-4"    [flatIcon]="true"    [isShowVolumeIcon]="true"    [isPlaying]="isPlaying"
     (togglePlay)="togglePlaylist($event)"
    x448626282666-x-test-hook-3>
   </as-play-button>
