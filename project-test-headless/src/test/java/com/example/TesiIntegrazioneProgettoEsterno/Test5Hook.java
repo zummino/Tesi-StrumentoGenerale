@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class TestHook {
+public class Test5Hook {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
