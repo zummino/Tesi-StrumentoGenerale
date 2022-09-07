@@ -1,6 +1,7 @@
 import { AuthStore } from '@angular-spotify/web/auth/data-access';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+
 @Component({
   selector: 'as-user-dropdown',
   templateUrl: './user-dropdown.component.html',
