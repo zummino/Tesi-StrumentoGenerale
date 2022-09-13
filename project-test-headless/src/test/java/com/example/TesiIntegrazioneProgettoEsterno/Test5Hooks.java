@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class Test6Hook {
+public class Test5Hooks {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
@@ -33,15 +33,16 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testHook_v_3_1() throws Exception {
+  public void testHooks_loc_Hooks_release_v_3_0() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.id("login-username")).click();
     driver.findElement(By.id("login-username")).clear();
     driver.findElement(By.id("login-username")).sendKeys("odoobnb@gmail.com");
+    driver.findElement(By.id("login-password")).click();
     driver.findElement(By.id("login-password")).clear();
     driver.findElement(By.id("login-password")).sendKeys("provaprova93");
-    driver.findElement(By.xpath("//button[@id='login-button']/div/p")).click();
-    driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x277063252156-x-test-hook-6]")).click();
+    driver.findElement(By.xpath("//button[@id='login-button']/div")).click();
+    driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-6]//*[@x277063252156-x-test-tpl-2]//*[@x277063252156-x-test-hook-6]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448569716309-x-test-tpl-1]//*[@x448569716309-x-test-hook-3][1]//*[@x448576661302-x-test-tpl-1]//*[@x448576661302-x-test-hook-3]")).click();
   }
 
