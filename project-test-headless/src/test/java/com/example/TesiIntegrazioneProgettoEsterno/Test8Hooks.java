@@ -33,7 +33,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testHooks_loc_Hooks_release_release_5_0() throws Exception {
+  public void testHooks_loc_Hooks_release_5_0() throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.id("login-username")).click();
     driver.findElement(By.id("login-username")).clear();
