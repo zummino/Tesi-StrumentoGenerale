@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.example.TesiIntegrazioneProgettoEsterno.TestTradizionale
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 32.303 s <<< FAILURE! - in com.example.TesiIntegrazioneProgettoEsterno.TestTradizionale
+testTradizionale_release_v_1_0(com.example.TesiIntegrazioneProgettoEsterno.TestTradizionale)  Time elapsed: 32.303 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'Search')]"}
+  (Session info: headless chrome=107.0.5304.87)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '4.0.0-alpha-3', revision: '8c567de6dc'
+System info: host: 'fv-az619-348', ip: '10.1.0.85', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-1022-azure', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.87, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.URIrEK}, goog:chromeOptions: {debuggerAddress: localhost:38527}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 485884f587570ba5da03cc76077e9379
+*** Element info: {Using=xpath, value=//a[contains(text(),'Search')]}
+	at com.example.TesiIntegrazioneProgettoEsterno.TestTradizionale.testTradizionale_release_v_1_0(TestTradizionale.java:50)
+
