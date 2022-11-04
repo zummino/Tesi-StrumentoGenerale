@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestHooks {
