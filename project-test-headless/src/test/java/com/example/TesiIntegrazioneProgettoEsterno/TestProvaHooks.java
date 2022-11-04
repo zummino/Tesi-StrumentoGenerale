@@ -10,7 +10,9 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import io.github.bonigarcia.wdm.WebDriverManager;import org.openqa.selenium.chrome.*;import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestProvaHooks {
 private static WebDriver driver;
@@ -23,7 +25,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
 		  // Init chromedriver
 		  //String chromeDriverPath = "/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver";
 		  //System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-		  WebDriverManager.chromedriver().setup();		  System.setProperty("webdriver.chrome.whitelistedIps", "");
+		  WebDriverManager.chromedriver().setup();
+		  System.setProperty("webdriver.chrome.whitelistedIps", "");
 		  ChromeOptions options = new ChromeOptions();
 		  options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--no-sandbox","--ignore-certificate-errors");
 		  driver = new ChromeDriver(options);  
