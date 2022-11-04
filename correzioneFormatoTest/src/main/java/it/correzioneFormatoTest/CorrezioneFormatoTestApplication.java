@@ -91,8 +91,8 @@ public class CorrezioneFormatoTestApplication {
 				+ "import org.openqa.selenium.*;\n"
 				+ "import org.openqa.selenium.chrome.ChromeDriver;\n"
 				+ "import org.openqa.selenium.support.ui.Select;\n"
-				+ "import io.github.bonigarcia.wdm.WebDriverManager;"
-				+ "import org.openqa.selenium.chrome.*;"
+				+ "import io.github.bonigarcia.wdm.WebDriverManager;\n"
+				+ "import org.openqa.selenium.chrome.*;\n"
 				+ "import org.openqa.selenium.chrome.ChromeOptions;\n";
 				
 		
@@ -106,7 +106,7 @@ public class CorrezioneFormatoTestApplication {
 				+ "		  // Init chromedriver\n"
 				+ "		  //String chromeDriverPath = \""+chromeDriverPath+"\";\n"
 				+ "		  //System.setProperty(\"webdriver.chrome.driver\", chromeDriverPath);\n"
-				+ "		  WebDriverManager.chromedriver().setup();"	
+				+ "		  WebDriverManager.chromedriver().setup();\n"	
 				+ "		  System.setProperty(\"webdriver.chrome.whitelistedIps\", \"\");\n"
 				+ "		  ChromeOptions options = new ChromeOptions();\n"
 				+ "		  options.addArguments(\"--headless\", \"--disable-gpu\", \"--window-size=1920,1200\",\"--no-sandbox\",\"--ignore-certificate-errors\");\n"

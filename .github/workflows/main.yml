@@ -64,34 +64,21 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+          
+      - name: step 7a - Install Chrome
+        uses: browser-actions/setup-chrome@latest
+        run: chrome --version
             
       - name: Step 7 - Install Chrome Headless
         run: |
-          sudo apt-get update
-          sudo apt-get upgrade
-          sudo apt-get -u dist-upgrade
-          sudo apt-get install -y libappindicator1 fonts-liberation
-          sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-scalable
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt-get -f install
-          google-chrome-stable --headless --disable-gpu    
+         
+            echo "Step 7 cancellato" 
           
       - name: Step 8 - Install Chrome-Driver for test junit
         run:  |
-            wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
-            echo "Vedo se si trova il punto zip"
-            ls -a
-            echo "Provo ad unzippare chormedriver_linux64.zip"
-            unzip chromedriver_linux64.zip
-            sudo mv chromedriver /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver
-            sudo chown root:root /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver
-            sudo chmod +x /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver
-            echo "Vediamo il nome della cartella unzippata"
-            ls -a
-            echo "Vediamo se ha scaricato il driver"
-            cd chromedriver_v94_linux64
-            echo "Contenuto della cartella chromedriver_v94_linux64"
-            ls -a
+            
+            echo "Step 8 cancellato"
+            
           
       - name: Step 9 - Eseguire test maven
         run:  |
