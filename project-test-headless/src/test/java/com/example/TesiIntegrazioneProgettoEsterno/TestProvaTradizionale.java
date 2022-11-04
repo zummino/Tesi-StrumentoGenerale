@@ -1,42 +1,33 @@
+package com.example.TestProva1;
 
-//File risulta attualmente aggiornato per webdriver chrome headless!
-package com.example.TesiIntegrazioneProgettoEsterno;
-
+import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
-
 import org.junit.*;
-
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.*;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.apache.commons.io.FileUtils;
+import java.io.File;
 
 public class TestProvaTradizionale {
-private static WebDriver driver;
-private boolean acceptNextAlert = true;
-private static StringBuffer verificationErrors = new StringBuffer();
+  private WebDriver driver;
+  private String baseUrl;
+  private boolean acceptNextAlert = true;
+  private StringBuffer verificationErrors = new StringBuffer();
+  JavascriptExecutor js;
+  @Before
+  public void setUp() throws Exception {
+    System.setProperty("webdriver.chrome.driver", "");
+    driver = new ChromeDriver();
+    baseUrl = "https://www.google.com/";
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    js = (JavascriptExecutor) driver;
+  }
 
-	  @Before
-	  public void setUp() throws Exception {
-		
-		  // Init chromedriver
-		  //String chromeDriverPath = "/home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/chromedriver_v94_linux64/chromedriver";
-		  //System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-		  WebDriverManager.chromedriver().setup();		  
-		  System.setProperty("webdriver.chrome.whitelistedIps", "");
-		  ChromeOptions options = new ChromeOptions();
-		  options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--no-sandbox","--ignore-certificate-errors");
-		  driver = new ChromeDriver(options);  
-		  
-		  
-		  
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	  }
   @Test
-  public void testTradizionale() throws Exception {
+  public void testTradizionale_release_v_1_1 throws Exception {
     driver.get("http://localhost:4200/");
     driver.findElement(By.id("login-username")).click();
     driver.findElement(By.id("login-username")).clear();
@@ -51,47 +42,45 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//a[contains(text(),'Gemitaiz')]")).click();
   }
 
+  @After
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
 
- @After
-	  public void tearDown() throws Exception {
-	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
-	  }
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
 
-	  private boolean isElementPresent(By by) {
-	    try {
-	      driver.findElement(by);
-	      return true;
-	    } catch (NoSuchElementException e) {
-	      return false;
-	    }
-	  }
+  private boolean isAlertPresent() {
+    try {
+      driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
 
-	  private boolean isAlertPresent() {
-	    try {
-	      driver.switchTo().alert();
-	      return true;
-	    } catch (NoAlertPresentException e) {
-	      return false;
-	    }
-	  }
-
-	  private String closeAlertAndGetItsText() {
-	    try {
-	      Alert alert = driver.switchTo().alert();
-	      String alertText = alert.getText();
-	      if (acceptNextAlert) {
-	        alert.accept();
-	      } else {
-	        alert.dismiss();
-	      }
-	      return alertText;
-	    } finally {
-	      acceptNextAlert = true;
-	    }
-	  }
-
+  private String closeAlertAndGetItsText() {
+    try {
+      Alert alert = driver.switchTo().alert();
+      String alertText = alert.getText();
+      if (acceptNextAlert) {
+        alert.accept();
+      } else {
+        alert.dismiss();
+      }
+      return alertText;
+    } finally {
+      acceptNextAlert = true;
+    }
+  }
 }
