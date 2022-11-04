@@ -67,7 +67,7 @@ jobs:
           
       - name: step 7a - Install Chrome
         uses: browser-actions/setup-chrome@latest
-        run: chrome --version
+      - run: chrome --version
             
       - name: Step 7 - Install Chrome Headless
         run: |
