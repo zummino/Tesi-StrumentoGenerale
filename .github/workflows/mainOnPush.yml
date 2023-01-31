@@ -44,7 +44,7 @@ jobs:
           sudo npm cache clean -f
           sudo npm install -g n
           sudo n stable
-          sudo n 11.18.0        
+          sudo n 11.15.0        
           echo "Versione di node: "
           node -v
           echo "Versione di npm: "
