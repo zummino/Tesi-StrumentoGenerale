@@ -39,14 +39,12 @@ jobs:
         run: |
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-          sudo curl -LO https://nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.xz
-          sudo tar -xvf node-v18.0.0-linux-x64.tar.xz
-          sudo cp -r node-v18.0.0-linux-x64/{bin,include,lib,share} /usr/
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo bash
           sudo apt install nodejs
           sudo npm cache clean -f
           sudo npm install -g n
           sudo n stable
-          sudo n 18.0.0        
+          sudo n 12.0.0        
           echo "Versione di node: "
           node -v
           echo "Versione di npm: "
