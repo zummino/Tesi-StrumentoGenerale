@@ -86,6 +86,7 @@ jobs:
             node -v
             echo "... Cancellazione e successivo aggiornamento di node_modules ..."
             rm -rf node_modules/
+            echo "npm update"
             npm update                  
             echo "INJECTION adesso..."
             echo "Visualizza versione di node"
