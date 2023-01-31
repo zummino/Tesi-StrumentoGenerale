@@ -39,12 +39,12 @@ jobs:
         run: |
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-          curl -sL https://deb.nodesource.com/setup_10.x | sudo bash
+          curl -sL https://deb.nodesource.com/setup_11.x | sudo bash
           sudo apt install nodejs
           sudo npm cache clean -f
           sudo npm install -g n
           sudo n stable
-          sudo n 10.18.0        
+          sudo n 11.18.0        
           echo "Versione di node: "
           node -v
           echo "Versione di npm: "
