@@ -90,8 +90,10 @@ jobs:
             echo "INJECTION adesso..."
             echo "Visualizza versione di node"
             node -v
+            echo "prima della mvn"
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/Tesi-injector-plugin
             mvn clean install
+            echo "dopo la mvn"
             cd target
             sudo bash -c 'java -jar Tesi-injector-plugin-1.0-SNAPSHOT.jar ${{ secrets.FE_EXTENSION_TYPE }} ${{ secrets.GRAMMAR_TYPE }} ${{ secrets.DIR_FILE_FE }} correct nomeTag'
             echo "Dopo l'injection!!!"
