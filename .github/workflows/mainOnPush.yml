@@ -39,7 +39,9 @@ jobs:
         run: |
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-          curl -sL https://deb.nodesource.com/setup_10.x | sudo bash
+          sudo curl -LO https://nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.xz
+          sudo tar -xvf node-v18.0.0-linux-x64.tar.xz
+          sudo cp -r node-v18.0.0-linux-x64/{bin,include,lib,share} /usr/
           sudo apt install nodejs
           sudo npm cache clean -f
           sudo npm install -g n
