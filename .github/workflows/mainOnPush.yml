@@ -34,22 +34,24 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-                    
+          
+      - name: Step 2.1
+        uses: actions/setup-node@v3
+        with:
+            node-version: 16
+      - run: npm ci
+      - run: npm test
+      
+        
+                        
       - name: Step 3 - Installare Node versione 10 in Ubuntu
         run: |
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-          curl -sL https://deb.nodesource.com/setup_11.x | sudo bash
-          sudo apt install nodejs
-          sudo npm cache clean -f
-          sudo npm install -g n
-          sudo n stable
-          sudo n 11.15.0        
           echo "Versione di node: "
           node -v
           echo "Versione di npm: "
           npm -v          
-          npm install
           echo "Provo ad INSTALLARE bcrypt"
           npm install bcrypt
           npm fund
