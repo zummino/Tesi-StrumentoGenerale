@@ -1,5 +1,4 @@
 
-
 Strumento Generale sviluppato nella tesi di laurea.
 
 
