@@ -45,6 +45,10 @@ jobs:
           sudo apt update
           sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
           sudo apt install nodejs
+          sudo npm cache clean -f 
+          sudo npm install -g n
+          sudo n stable
+          sudo n 10.18.10
           echo "Versione di node: "
           node -v
           echo "Versione di npm: "
