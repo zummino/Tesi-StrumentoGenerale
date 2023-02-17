@@ -1,1 +1,6 @@
-<div class="content-spacing" x448574962180-x-test-tpl-1>  <h2 class="mb-4 text-heading"      *ngIf="category$ | async as category" x448574962180-x-test-hook-2>{{ category.name }}  </h2>  <ng-container *ngrxLet="playlists$ as playlists" x448574962180-x-test-hook-3>    <as-playlist-list [isLoading]="!playlists"                      [playlists]="$any(playlists)" x448574962180-x-test-hook-4>    </as-playlist-list>  </ng-container></div>
+<div class="content-spacing" x448574962180-x-test-tpl-1> 
+	<h2 class="mb-4 text-heading"  *ngIf="category$ | async as category" x448574962180-x-test-hook-2>{{ category.name }}  </h2> 
+	<ng-container *ngrxLet="playlists$ as playlists" x448574962180-x-test-hook-3>  
+		<as-playlist-list [isLoading]="!playlists"  [playlists]="$any(playlists)" x448574962180-x-test-hook-4>    </as-playlist-list>
+	</ng-container>
+</div>
