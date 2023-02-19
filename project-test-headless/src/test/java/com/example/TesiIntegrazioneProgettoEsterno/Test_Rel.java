@@ -45,7 +45,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.id("login-password")).click();
     driver.findElement(By.id("login-password")).clear();
     driver.findElement(By.id("login-password")).sendKeys("provaprova93");
-    driver.findElement(By.xpath("//button[@id='login-button']/div/p")).click();
+    driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]")).click();
     driver.findElement(By.xpath("//a[1][normalize-space()='Search']")).click();
     driver.findElement(By.xpath("//input[1][normalize-space()='']")).sendKeys("marco");
     driver.findElement(By.xpath("//input[1][normalize-space()='']")).sendKeys(Keys.ENTER);
