@@ -38,14 +38,14 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Abs_release_1_1() throws Exception{
     driver.get("http://localhost:4200/");
-    Thread.sleep(5000);
-    driver.findElement(By.xpath("//input[1][@value='']")).click();
-    driver.findElement(By.xpath("//input[1][@value='']")).clear();
-    driver.findElement(By.xpath("//input[1][@value='']")).sendKeys("odoobnb@gmail.com");
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).click();
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).clear();
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).sendKeys("provaprova93");
-    driver.findElement(By.xpath("//span[1][@class='Type__TypeElement-goli3j-0 dmuHFl sc-hKwDye fXzRSj']")).click();
+    Thread.sleep(5000);    
+    driver.findElement(By.id("login-username")).click();
+    driver.findElement(By.id("login-username")).clear();
+    driver.findElement(By.id("login-username")).sendKeys("odoobnb@gmail.com");
+    driver.findElement(By.id("login-password")).click();
+    driver.findElement(By.id("login-password")).clear();
+    driver.findElement(By.id("login-password")).sendKeys("provaprova93");
+    driver.findElement(By.xpath("//button[@id='login-button']/div/p")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-nav-bar[1]/ul[1]/li[2]/a[1]")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[1]/as-input[1]/div[1]/input[1]")).sendKeys("marco");
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[1]/as-input[1]/div[1]/input[1]")).sendKeys(Keys.ENTER);
