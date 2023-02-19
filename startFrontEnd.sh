@@ -1,14 +1,14 @@
 echo "inserisci qui i comandi per lo starting del Front-End della tua applciazione web"
 echo "Inizio comandi installazione precondizioni"
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
-curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
-cat nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo apt install nodejs
+#curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+#cat nodesource_setup.sh
+#sudo bash nodesource_setup.sh
+#sudo apt install nodejs
 echo "versione di node installata"
 node -v
-echo "Installazione di npm"
-sudo apt install npm
+#echo "Installazione di npm"
+#sudo apt install npm
 echo "Fine comandi installazione Node"
 
 echo "Inizio comandi esecuzione Frontend"
