@@ -38,14 +38,14 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Hooks_release_1_1() throws Exception{
     driver.get("http://localhost:4200/");
-    Thread.sleep(5000);
-    driver.findElement(By.xpath("//input[1][@value='']")).click();
-    driver.findElement(By.xpath("//input[1][@value='']")).clear();
-    driver.findElement(By.xpath("//input[1][@value='']")).sendKeys("odoobnb@gmail.com");
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).click();
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).clear();
-    driver.findElement(By.xpath("//input[1][@aria-describedby='password-error']")).sendKeys("provaprova93");
-    driver.findElement(By.xpath("//span[1][@class='Type__TypeElement-goli3j-0 dmuHFl sc-hKwDye fXzRSj']")).click();
+    Thread.sleep(5000);    
+    driver.findElement(By.id("login-username")).click();
+    driver.findElement(By.id("login-username")).clear();
+    driver.findElement(By.id("login-username")).sendKeys("odoobnb@gmail.com");
+    driver.findElement(By.id("login-password")).click();
+    driver.findElement(By.id("login-password")).clear();
+    driver.findElement(By.id("login-password")).sendKeys("provaprova93");
+    driver.findElement(By.xpath("//button[@id='login-button']/div/p")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x448627084077-x-test-hook-4][2]//*[@x448627084077-x-test-hook-5]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448594643043-x-test-tpl-1]//*[@x448594643043-x-test-hook-3]//*[@x448605300685-x-test-tpl-1]//*[@x448605300685-x-test-hook-4]")).sendKeys("marco");
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448594643043-x-test-tpl-1]//*[@x448594643043-x-test-hook-3]//*[@x448605300685-x-test-tpl-1]//*[@x448605300685-x-test-hook-4]")).sendKeys(Keys.ENTER);
