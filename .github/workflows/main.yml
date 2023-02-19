@@ -48,8 +48,13 @@ jobs:
             sudo mkdir TestSuite
           fi
           echo "Vediamo se ha creato la cartella"
-          ls -a       
-        
+          ls -a  
+          
+      - name: Step 3.1 - Set up Node
+        uses: action/setup-node@v3
+        with:
+          node-versione: 12
+          
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
             cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale
