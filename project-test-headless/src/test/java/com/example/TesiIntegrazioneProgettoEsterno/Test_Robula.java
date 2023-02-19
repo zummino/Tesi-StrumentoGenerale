@@ -47,11 +47,9 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova93");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
     driver.findElement(By.xpath("//a[1][@href='/search']")).click();
-    driver.findElement(By.xpath("//a[1][@href='/search']")).clear();
     driver.findElement(By.xpath("//input[1]")).sendKeys("marco");
     driver.findElement(By.xpath("//input[1]")).sendKeys(Keys.ENTER);
     driver.findElement(By.xpath("//as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
-    driver.get("http://localhost:3001/");
     Thread.sleep(5000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//h2[@class='media-title ellipsis-one-line']")).getText());
   }
