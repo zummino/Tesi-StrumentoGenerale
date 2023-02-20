@@ -68,13 +68,23 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	
 	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
 		  
-			 int N = 0;
+		int N = 0;
+		
 		      while(!test_elem && N< 1000) {
 		    	  N++;
 		    	  driver.get("http://localhost:4200/");
-		    	  Thread.sleep(2000);
 		    	  test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
-		    	  System.out.println("Loop:"+N);
+		    	   
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).click();
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
+				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+				    f = driver.findElement(By.xpath("//html")).getText();
+					System.out.println(f);
+		    	    System.out.println("Loop:"+N);
 		      }
 	
 	WebDriverWait wait = new WebDriverWait(driver, 120);
