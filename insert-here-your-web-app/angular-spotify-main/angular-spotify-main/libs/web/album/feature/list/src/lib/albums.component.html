@@ -1,4 +1,3 @@
-<div class="content-spacing" x448544427471-x-test-tpl-1>	<div class="common-grid" *ngIf="albums$ | async as albums" x448544427471-x-test-hook-2>		<as-media *ngFor="let item of albums.items" [title]="item.album.name" [uri]="item.album.uri" [description]="item.album.artists[0].name" [imageUrl]="item.album.images[0]?.url" [routerUrl]="item.album.id" (togglePlay)="togglePlay($event, item.album.uri)" x448544427471-x-test-hook-3>		</as-media>	</div>
-	<as-spinner *ngIf="isLoading$ | async" x448544427471-x-test-hook-4>
+<div class="content-spacing" x448544427471-x-test-tpl-1>	<div class="common-grid" *ngIf="albums$ | async as albums" x448544427471-x-test-hook-2>		<as-media *ngFor="let item of albums.items" [title]="item.album.name" [uri]="item.album.uri" [description]="item.album.artists[0].name" [imageUrl]="item.album.images[0]?.url" [routerUrl]="item.album.id" (togglePlay)="togglePlay($event, item.album.uri)" x448544427471-x-test-hook-3>		</as-media>	</div>	<as-spinner *ngIf="isLoading$ | async" x448544427471-x-test-hook-4>
 	</as-spinner>
 </div>
