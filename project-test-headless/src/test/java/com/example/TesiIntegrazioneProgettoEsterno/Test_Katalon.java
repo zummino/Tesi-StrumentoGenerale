@@ -65,7 +65,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(m);
+	System.out.println("Prima del loop: "+m);
 	
 	
 	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
@@ -95,10 +95,13 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 		
 	String s = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(s);
+	System.out.println('Dopo il loop:'+s);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/following::a[1]")).click();
+	System.out.println("prima");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
+    System.out.println("dopo");
+	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
+	System.out.println("dopo dopo");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Home'])[1]/following::a[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::input[1]")).sendKeys("mengoni");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Due Vite'])[1]/following::a[1]")).click();
