@@ -52,7 +52,7 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
   @Test
   public void test_loc_Abs_release_1_1() throws Exception{
     driver.get("http://localhost:4200/");
-    Thread.sleep(6000);
+    Thread.sleep(1000);
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
@@ -60,36 +60,36 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
-	 String f = driver.findElement(By.xpath("//html")).getText();
-					System.out.println(f);
-	Thread.sleep(6000);
+	String f = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(f);
+	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
-	Thread.sleep(6000);
+	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
 	System.out.println(m);
 	
-	
-	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
 		  
-			 int N = 0;
+	int N = 0;
 		
-		      while(!test_elem && N< 1000) {
-		    	  N++;
-		    	  driver.get("http://localhost:4200/");
-		    	  test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
-		    	   
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).click();
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
-				    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
-				    f = driver.findElement(By.xpath("//html")).getText();
-					System.out.println(f);
-		    	    System.out.println("Loop:"+N);
-		      }
+	while(!test_elem && N< 1000) {
+		N++;
+		driver.get("http://localhost:4200/");
+		
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).click();
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
+		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+		f = driver.findElement(By.xpath("//html")).getText();
+		System.out.println(f);
+		test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
+		System.out.println(test_elem);
+		System.out.println("Loop:"+N);
+		
+	}
 	
 	WebDriverWait wait = new WebDriverWait(driver, 120);
 	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
@@ -103,7 +103,7 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[1]/as-input[1]/div[1]/input[1]")).sendKeys("mengoni");
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[2]/div[1]/as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Mi Fiderò (feat. Madame)'])[1]/following::a[1]")).click();
-    Thread.sleep(4000);
+    Thread.sleep(1000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-album[1]/div[1]/as-media-summary[1]/div[1]/div[2]/div[1]")).getText());
   }
 
