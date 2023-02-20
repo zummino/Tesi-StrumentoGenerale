@@ -21,6 +21,18 @@ private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
 
+
+	public static boolean isElementPresent(WebDriver driver, String locator) {
+	      try {
+	         driver.findElement(By.xpath(locator));
+	         return true;
+	      } catch (NoSuchElementException e) {
+	         return false;
+	      }
+	   }
+
+
+
 	  @Before
 	  public void setUp() throws Exception {
 		
@@ -54,6 +66,17 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
 	System.out.println(m);
+	
+	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
+		  
+			 int N = 0;
+		      while(!test_elem && N< 1000) {
+		    	  N++;
+		    	  driver.get("http://localhost:4200/");
+		    	  Thread.sleep(2000);
+		    	  test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
+		    	  System.out.println("Loop:"+N);
+		      }
 	
 	WebDriverWait wait = new WebDriverWait(driver, 120);
 	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
