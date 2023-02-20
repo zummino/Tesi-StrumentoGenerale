@@ -51,9 +51,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(6000);
+	String m = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(m);
+	
 	
 	WebDriverWait wait = new WebDriverWait(driver, 30);
-	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("*//a[normalize-space()='Home']"), "Home"));
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 	
 	String s = driver.findElement(By.xpath("//html")).getText();
 	System.out.println(s);
