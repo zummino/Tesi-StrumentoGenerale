@@ -13,7 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 public class Test_Katalon{
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
@@ -49,8 +50,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(6000);
-			String s = driver.findElement(By.xpath("//html")).getText();
-			System.out.println(s);
+	
+	WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("*//a[normalize-space()='Home']"), "Home"));
+		
+	String s = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(s);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/following::a[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Top list'])[1]/following::as-media-cover[1]")).click();

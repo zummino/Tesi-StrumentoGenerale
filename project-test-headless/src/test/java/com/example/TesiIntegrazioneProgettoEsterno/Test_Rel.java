@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test_Rel{
 private static WebDriver driver;
@@ -49,8 +51,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(6000);
-			String s = driver.findElement(By.xpath("//html")).getText();
-			System.out.println(s);
+	
+	WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("*//a[normalize-space()='Home']"), "Home"));
+	
+	String s = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(s);
 	driver.findElement(By.xpath("//a[1][normalize-space()='Browse']")).click();
     driver.findElement(By.xpath("//div[1][@class='mb-6 content-spacing']/div[1]/as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//div[1][@class='content-spacing']/as-playlist-list[1]/div[1]/as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();

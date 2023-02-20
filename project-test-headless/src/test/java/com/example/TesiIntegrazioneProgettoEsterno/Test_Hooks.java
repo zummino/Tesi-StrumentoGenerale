@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test_Hooks{
 private static WebDriver driver;
@@ -49,8 +51,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(6000);
-			String s = driver.findElement(By.xpath("//html")).getText();
-			System.out.println(s);
+	
+	WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("*//a[normalize-space()='Home']"), "Home"));
+	
+	String s = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(s);
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x448627084077-x-test-hook-4][3]//*[@x448627084077-x-test-hook-5]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448569716309-x-test-tpl-1]//*[@x448569716309-x-test-hook-3][1]//*[@x448576661302-x-test-tpl-1]//*[@x448576661302-x-test-hook-2]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448574962180-x-test-tpl-1]//*[@x448574962180-x-test-hook-4]//*[@x448610760758-x-test-tpl-1]//*[@x448610760758-x-test-hook-2][1]//*[@x448609128836-x-test-tpl-1]//*[@x448609128836-x-test-hook-3]")).click();

@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test_Robula{
 private static WebDriver driver;
@@ -49,8 +51,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(6000);
-			String s = driver.findElement(By.xpath("//html")).getText();
-			System.out.println(s);
+	
+	WebDriverWait wait = new WebDriverWait(driver, 30);
+	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("*//a[normalize-space()='Home']"), "Home"));
+	
+	String s = driver.findElement(By.xpath("//html")).getText();
+	System.out.println(s);
     driver.findElement(By.xpath("//li[3]/a[1]")).click();
     driver.findElement(By.xpath("//as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();
