@@ -47,6 +47,8 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
 	Thread.sleep(5000);
+	driver.get("http://localhost:4200/");
+	Thread.sleep(4000);
 			String s = driver.findElement(By.xpath("//html")).getText();
 			System.out.println(s);
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x448627084077-x-test-hook-4][3]//*[@x448627084077-x-test-hook-5]")).click();
