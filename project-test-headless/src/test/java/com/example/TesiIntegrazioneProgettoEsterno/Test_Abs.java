@@ -71,7 +71,7 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 	
 		  
 	int N = 0;
-		
+	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");	
 	while(!test_elem && N< 1000) {
 		N++;
 		driver.get("http://localhost:4200/");
