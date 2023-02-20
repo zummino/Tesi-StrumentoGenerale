@@ -37,6 +37,7 @@ public class Test_Rel{
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//a[1][normalize-space()='Browse']")).click();
     driver.findElement(By.xpath("//div[1][@class='mb-6 content-spacing']/div[1]/as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//div[1][@class='content-spacing']/as-playlist-list[1]/div[1]/as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();

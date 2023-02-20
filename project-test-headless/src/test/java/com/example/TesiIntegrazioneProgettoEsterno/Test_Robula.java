@@ -37,6 +37,7 @@ public class Test_Robula{
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+	Thread.sleep(3000);
     driver.findElement(By.xpath("//li[3]/a[1]")).click();
     driver.findElement(By.xpath("//as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();

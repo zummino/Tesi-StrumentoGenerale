@@ -37,6 +37,7 @@ public class Test_Hooks{
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+	Thread.sleep(3000);
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x448627084077-x-test-hook-4][3]//*[@x448627084077-x-test-hook-5]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448569716309-x-test-tpl-1]//*[@x448569716309-x-test-hook-3][1]//*[@x448576661302-x-test-tpl-1]//*[@x448576661302-x-test-hook-2]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448574962180-x-test-tpl-1]//*[@x448574962180-x-test-hook-4]//*[@x448610760758-x-test-tpl-1]//*[@x448610760758-x-test-hook-2][1]//*[@x448609128836-x-test-tpl-1]//*[@x448609128836-x-test-hook-3]")).click();
