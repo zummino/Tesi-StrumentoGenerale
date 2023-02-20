@@ -51,7 +51,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   @Test
   public void test_loc_Hooks_release_1_1() throws Exception{
     driver.get("http://localhost:4200/");
-    Thread.sleep(000);
+    Thread.sleep(1000);
 	driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
@@ -60,13 +60,13 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
 	String f = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(f);
+	//System.out.println(f);
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(m);
+	//System.out.println(m);
 	
 	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
 		  
@@ -93,11 +93,11 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	
 	
 	
-	WebDriverWait wait = new WebDriverWait(driver, 120);
-	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
+	//WebDriverWait wait = new WebDriverWait(driver, 120);
+	//wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 	
 	String s = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(s);
+	//System.out.println(s);
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-1]//*[@x448627084077-x-test-tpl-3]//*[@x448627084077-x-test-hook-4][3]//*[@x448627084077-x-test-hook-5]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448569716309-x-test-tpl-1]//*[@x448569716309-x-test-hook-3][1]//*[@x448576661302-x-test-tpl-1]//*[@x448576661302-x-test-hook-2]")).click();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448574962180-x-test-tpl-1]//*[@x448574962180-x-test-hook-4]//*[@x448610760758-x-test-tpl-1]//*[@x448610760758-x-test-hook-2][1]//*[@x448609128836-x-test-tpl-1]//*[@x448609128836-x-test-hook-3]")).click();
@@ -105,7 +105,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448594643043-x-test-tpl-1]//*[@x448594643043-x-test-hook-3]//*[@x448605300685-x-test-tpl-1]//*[@x448605300685-x-test-hook-4]")).sendKeys("mengoni");
     driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448594643043-x-test-tpl-1]//*[@x448594643043-x-test-hook-14][1]//*[@x448545732489-x-test-tpl-1]//*[@x448621166798-x-test-hook-9]")).click();
     driver.findElement(By.xpath("//div[2][@class='main-view']/as-artist[1]/div[1]/as-artist-top-tracks[1]/as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
-    Thread.sleep(4000);
+    Thread.sleep(1000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448542025239-x-test-tpl-1]//*[@x448542025239-x-test-hook-3]//*[@x448607117010-x-test-tpl-2]//*[@x448607117010-x-test-hook-7]")).getText());
   }
 

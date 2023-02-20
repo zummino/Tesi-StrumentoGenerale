@@ -61,15 +61,15 @@ private static StringBuffer verificationErrors = new StringBuffer();
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
 	String f = driver.findElement(By.xpath("//html")).getText();
-					System.out.println(f);
+	//System.out.println(f);
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(m);
+	//System.out.println(m);
 	
-	 boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
+	boolean test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
 		  
 		  
 	int N = 0;
@@ -93,11 +93,11 @@ private static StringBuffer verificationErrors = new StringBuffer();
 		
 	}
 	
-	WebDriverWait wait = new WebDriverWait(driver, 120);
-	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
+	//WebDriverWait wait = new WebDriverWait(driver, 120);
+	//wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 	
 	String s = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(s);
+	//System.out.println(s);
     driver.findElement(By.xpath("//li[3]/a[1]")).click();
     driver.findElement(By.xpath("//as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();

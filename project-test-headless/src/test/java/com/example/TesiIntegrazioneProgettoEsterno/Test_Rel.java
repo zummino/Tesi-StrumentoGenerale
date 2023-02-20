@@ -61,13 +61,13 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
     driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
 	String f = driver.findElement(By.xpath("//html")).getText();
-					System.out.println(f);
+	//System.out.println(f);
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	Thread.sleep(1000);
 	driver.get("http://localhost:4200/");
 	String m = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(m);	
+	//System.out.println(m);	
 	
 
 		  
@@ -92,11 +92,11 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 		
 	}
 
-	WebDriverWait wait = new WebDriverWait(driver, 120);
-	wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
+	//WebDriverWait wait = new WebDriverWait(driver, 120);
+	//wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 	
 	String s = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(s);
+	//System.out.println(s);
 	driver.findElement(By.xpath("//a[1][normalize-space()='Browse']")).click();
     driver.findElement(By.xpath("//div[1][@class='mb-6 content-spacing']/div[1]/as-category-cover[1]/a[1]/as-media-cover[1]")).click();
     driver.findElement(By.xpath("//div[1][@class='content-spacing']/as-playlist-list[1]/div[1]/as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();
