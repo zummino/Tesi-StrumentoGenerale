@@ -53,8 +53,6 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(6000);
 	String m = driver.findElement(By.xpath("//html")).getText();
 	System.out.println(m);
-	String m = driver.findElement(By.xpath("//html")).getText();
-	System.out.println(m);
 	
 	
 	WebDriverWait wait = new WebDriverWait(driver, 30);
