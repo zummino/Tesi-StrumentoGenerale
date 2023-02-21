@@ -78,7 +78,7 @@ jobs:
             
       - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         working-directory: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main
-        run:  npm ci --ignore-scripts
+        run:  npm install
       
       - name: Step 5.1 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
