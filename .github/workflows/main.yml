@@ -64,12 +64,12 @@ jobs:
       - if: steps.cache-npm.outputs.cache-hit != 'true'
         name: Liste node false
         continue-on-error: true
-        run: npm list
+        run: echo "npm list"
 
       - if: steps.cache-npm.outputs.cache-hit == 'true'
         name: Liste node true
         continue-on-error: true
-        run: npm list -g
+        run: echo "npm list -g"
           
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
@@ -78,7 +78,7 @@ jobs:
             
       - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         working-directory: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main
-        run:  npm ci
+        run:  echo "ciao"
       
       - name: Step 5.1 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
