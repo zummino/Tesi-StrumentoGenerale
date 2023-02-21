@@ -15,9 +15,9 @@ export class UIStore extends ComponentStore<UIState> {
   constructor(private modalService: NzModalService) {
     super({
       navItems: [
+		{ label: 'Browse', path: '/browse' },
         { label: 'Home', path: '', exact: true },
-        { label: 'Search', path: '/search' },
-        { label: 'Browse', path: '/browse' },
+        { label: 'Search', path: '/search' },        
         { label: 'My Playlists', path: '/collection/playlists' },
         { label: 'My Albums', path: '/albums' }
       ],
