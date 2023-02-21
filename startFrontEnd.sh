@@ -14,7 +14,8 @@ echo "Fine comandi installazione Node"
 echo "Inizio comandi esecuzione Frontend"
 cd /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main
 echo "Siamo nella directory FE, proviamo a lanciarlo in esecuzione"
-npm install
+#npm install
+npm list
 echo "Installazione npm effettuata, prossimo comando: npm start"
 echo "npm start"
 npm start > /dev/null 2>&1 &
