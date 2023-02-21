@@ -54,6 +54,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 12
+      
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key : ${{ runner.os }}-npm-prova-${{ hashFiles('**/package-lock.json') }}
+      
+      - if: steps.cache-npm.outputs.cache-hit != 'true'
+        name: Liste node
+        continue-on-error: true
+        run: npm list        
           
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
