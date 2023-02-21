@@ -67,7 +67,8 @@ jobs:
         run: npm list
 
       - if: steps.cache-npm.outputs.cache-hit == 'true'
-        name: Liste node false
+        name: Liste node true
+        working-directory: ~/.npm
         continue-on-error: true
         run: npm list
           
