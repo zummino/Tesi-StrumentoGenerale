@@ -68,9 +68,8 @@ jobs:
 
       - if: steps.cache-npm.outputs.cache-hit == 'true'
         name: Liste node true
-        working-directory: ~/.npm
         continue-on-error: true
-        run: npm list
+        run: npm list -g
           
       - name: Step 4 - SEZIONE BACK-END - Esegui Applicazione Spring Boot tramite jar
         run:  |
