@@ -6,7 +6,6 @@
 		<div [ngClass]="['ellipsis-one-line', 'text-base', isPlaying ? 'text-primary': 'text-white']" x448621166798-x-test-hook-5> {{ track.name }}</div>		
 		<div class="flex" *ngIf="isShowArtist" x448621166798-x-test-hook-6>			
 			<ng-container *ngFor="let artist of track.artists | slice:0:2; let idx = index" x448621166798-x-test-hook-7>
-				<span class="mr-1 comma-separator" *ngIf="idx !== 0" x448621166798-x-test-hook-8>,</span>
 				<a class="text-description link-subtle ellipsis-one-line hover:underline" [routerLink]="getArtistRouteUrl(artist)" x448621166798-x-test-hook-9> {{ artist.name }}</a>
 			</ng-container>
 		</div>
