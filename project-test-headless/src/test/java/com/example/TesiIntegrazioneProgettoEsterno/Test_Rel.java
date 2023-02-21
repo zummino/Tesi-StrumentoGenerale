@@ -53,13 +53,14 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
   public void test_loc_Rel_release_1_1() throws Exception{
     driver.get("http://localhost:4200/");
     Thread.sleep(1000);
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
-    driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+	driver.findElement(By.xpath("//input[@id='login-username']")).click();
+	driver.findElement(By.xpath("//input[@id='login-username']")).clear();
+	driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("odoobnb@gmail.com");
+	driver.findElement(By.xpath("//input[@id='login-password']")).click();
+	driver.findElement(By.xpath("//input[@id='login-password']")).clear();
+	driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova92");
+	driver.findElement(By.xpath("//button[@id='login-button']")).click();
+	
 	String f = driver.findElement(By.xpath("//html")).getText();
 	//System.out.println(f);
 	Thread.sleep(1000);
@@ -77,13 +78,14 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 		N++;
 		driver.get("http://localhost:4200/");
 		
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).click();
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).clear();
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/input[1]")).sendKeys("odoobnb@gmail.com");
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).click();
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).clear();
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("provaprova92");
-		driver.findElement(By.xpath("//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]/div[1]/span[1]")).click();
+		driver.findElement(By.xpath("//input[@id='login-username']")).click();
+		driver.findElement(By.xpath("//input[@id='login-username']")).clear();
+		driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("odoobnb@gmail.com");
+		driver.findElement(By.xpath("//input[@id='login-password']")).click();
+		driver.findElement(By.xpath("//input[@id='login-password']")).clear();
+		driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova92");
+		driver.findElement(By.xpath("//button[@id='login-button']")).click();
+	
 		f = driver.findElement(By.xpath("//html")).getText();
 		System.out.println(f);
 		test_elem = isElementPresent(driver, "//a[normalize-space()='Home']");
