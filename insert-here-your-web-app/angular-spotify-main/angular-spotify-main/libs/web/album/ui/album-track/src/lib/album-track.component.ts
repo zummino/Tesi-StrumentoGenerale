@@ -45,4 +45,5 @@ export class AlbumTrackComponent implements OnInit {
       })
       .subscribe(); //TODO: Refactor with component store live stream
   }
+
 }
