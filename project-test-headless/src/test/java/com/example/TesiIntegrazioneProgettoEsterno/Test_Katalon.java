@@ -100,15 +100,11 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	//wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("//a[normalize-space()='Home']"), "Home"));
 		
 	String s = driver.findElement(By.xpath("//html")).getText();
-	//System.out.println("Dopo il loop:"+s);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/following::a[1]")).click();
-	//System.out.println("prima");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
-    //System.out.println("dopo");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='marco'])[1]/following::as-media-cover[1]")).click();
-	//System.out.println("dopo dopo");
 	Thread.sleep(1000);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Home'])[1]/following::a[1]")).click();
 	Thread.sleep(1000);

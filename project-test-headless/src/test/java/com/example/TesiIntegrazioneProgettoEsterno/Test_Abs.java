@@ -100,15 +100,22 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 	String s = driver.findElement(By.xpath("//html")).getText();
 	//System.out.println(s);
 	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-nav-bar[1]/ul[1]/li[3]/a[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-categories[1]/div[1]/div[1]/as-category-cover[1]/a[1]/as-media-cover[1]")).click();
+    Thread.sleep(500);
+	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-categories[1]/div[1]/div[1]/as-category-cover[1]/a[1]/as-media-cover[1]")).click();
+    Thread.sleep(500);
     driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-category-detail[1]/div[1]/as-playlist-list[1]/div[1]/as-media[1]/a[1]/div[2]/as-media-cover[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-nav-bar[1]/ul[1]/li[2]/a[1]")).click();
-    driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[1]/as-input[1]/div[1]/input[1]")).sendKeys("mengoni");
-    driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[2]/div[1]/as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Mi Fiderò (feat. Madame)'])[1]/following::a[1]")).click();
-    Thread.sleep(1000);
+    Thread.sleep(500);
+	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-nav-bar[1]/ul[1]/li[2]/a[1]")).click();
+    Thread.sleep(500);
+	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[1]/as-input[1]/div[1]/input[1]")).sendKeys("mengoni");
+    Thread.sleep(500);
+	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-search[1]/div[1]/div[2]/div[1]/as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
+    Thread.sleep(500);
+	driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Mi Fiderò (feat. Madame)'])[1]/following::a[1]")).click();
+    Thread.sleep(500);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-album[1]/div[1]/as-media-summary[1]/div[1]/div[2]/div[1]")).getText());
-  }
+ 
+ }
 
 
  @After
