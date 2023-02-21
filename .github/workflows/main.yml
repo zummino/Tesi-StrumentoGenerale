@@ -58,7 +58,7 @@ jobs:
         id: cache-npm
         uses: actions/cache@v3
         with:
-          path: ~/.npm
+          path: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main/.npm
           key : ${{ runner.os }}-npm-prova-${{ hashFiles('**/package-lock.json') }}
       
       - if: steps.cache-npm.outputs.cache-hit != 'true'
@@ -78,7 +78,7 @@ jobs:
             
       - name: Step 5 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         working-directory: /home/runner/work/Tesi-StrumentoGenerale/Tesi-StrumentoGenerale/insert-here-your-web-app/angular-spotify-main/angular-spotify-main
-        run:  npm install --ignore-scripts
+        run:  echo "ciao"
       
       - name: Step 5.1 - SEZIONE FRONT-END - Esegui Applicazione FE tramite nmp
         run:  |
