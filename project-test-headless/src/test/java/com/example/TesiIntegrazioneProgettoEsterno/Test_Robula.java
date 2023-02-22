@@ -112,7 +112,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	Thread.sleep(500);
     driver.findElement(By.xpath("//as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
 	Thread.sleep(500);
-    driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-artist[1]/div[1]/as-artist-top-tracks[1]/as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
+    driver.findElement(By.xpath("//as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
     Thread.sleep(1000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//div[1][@class='text-sm font-bold text-white ng-star-inserted']")).getText());
   }

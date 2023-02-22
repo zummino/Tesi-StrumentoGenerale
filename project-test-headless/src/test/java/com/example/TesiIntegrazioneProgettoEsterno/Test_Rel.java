@@ -111,10 +111,11 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 	Thread.sleep(500);
     driver.findElement(By.xpath("//div[1][@class='mb-8']/as-album-track[1]/as-media-table-row[1]/as-track-main-info[1]/div[2]/div[2]/a[1]")).click();
 	Thread.sleep(500);
-    driver.findElement(By.xpath("//as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
+    driver.findElement(By.xpath("//div[2][@class='main-view']/as-artist[1]/div[1]/as-artist-top-tracks[1]/as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
     Thread.sleep(2000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//div[1][normalize-space()='Marco Mengoni']")).getText());
   }
+
 
 
  @After

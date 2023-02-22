@@ -110,11 +110,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
     Thread.sleep(500);
 	driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448594643043-x-test-tpl-1]//*[@x448594643043-x-test-hook-14][1]//*[@x448545732489-x-test-tpl-1]//*[@x448621166798-x-test-hook-9]")).click();
     Thread.sleep(500);
-	driver.findElement(By.xpath("//div[2][@class='main-view']/as-artist[1]/div[1]/as-artist-top-tracks[1]/as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
+	driver.findElement(By.xpath("//html[1]/body[1]/angular-spotify-root[1]/as-layout[1]/as-main-view[1]/div[2]/as-artist[1]/div[1]/as-artist-top-tracks[1]/as-artist-top-track[2]/as-media-table-row[1]/a[1]")).click();
     Thread.sleep(1000);
     assertEquals("Marco Mengoni",driver.findElement(By.xpath("//*[@x448533202421-x-test-tpl-1]//*[@x448533202421-x-test-hook-29]//*[@x448624268039-x-test-tpl-3]//*[@x448624897747-x-test-tpl-2]//*[@x448542025239-x-test-tpl-1]//*[@x448542025239-x-test-hook-3]//*[@x448607117010-x-test-tpl-2]//*[@x448607117010-x-test-hook-7]")).getText());
   }
-
 
  @After
 	  public void tearDown() throws Exception {
