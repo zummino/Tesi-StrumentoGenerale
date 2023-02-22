@@ -6,7 +6,6 @@ import { MediaOrderModule } from '@angular-spotify/web/shared/ui/media-order';
 import { TrackMainInfoModule } from '@angular-spotify/web/shared/ui/track-main-info';
 import { DurationPipeModule } from '@angular-spotify/web/shared/pipes/duration-pipe';
 import { ReactiveComponentModule } from '@ngrx/component';
-import { InputModule } from '@angular-spotify/web/shared/ui/input';
 
 @NgModule({
   imports: [
@@ -16,7 +15,6 @@ import { InputModule } from '@angular-spotify/web/shared/ui/input';
     TrackMainInfoModule,
     DurationPipeModule,
     ReactiveComponentModule,
-	InputModule,
   ],
   declarations: [AlbumTrackComponent],
   exports: [AlbumTrackComponent]
