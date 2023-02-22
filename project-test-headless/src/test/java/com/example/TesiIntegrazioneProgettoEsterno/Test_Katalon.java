@@ -118,6 +118,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
   }
 
 
+
  @After
 	  public void tearDown() throws Exception {
 	    driver.quit();
