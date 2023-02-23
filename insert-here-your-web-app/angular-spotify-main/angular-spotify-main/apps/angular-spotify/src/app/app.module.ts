@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { WebShellModule } from '@angular-spotify/web/shell/feature';
@@ -15,6 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   imports: [
     BrowserModule,
+	RouterModule,
     HttpClientModule,
     WebShellModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
