@@ -21,13 +21,7 @@
 					<svg-icon [key]="'clock'" title="Duration" x448594643043-x-test-hook-12></svg-icon>        
 				</div>		
 			</as-media-table-header>      
-			<as-album-track   
-				*ngFor="let item of data?.tracks?.items; let idx = index" 
-				[track]="item" 
-				[contextUri]="item.album.uri"  
-				[index]="idx + 1"  
-				x448594643043-x-test-hook-14>  
-				</as-album-track>  
+			
 			<div class="mb-8" x448594643043-x-test-hook-13>     
 				 
 			</div>
@@ -65,6 +59,13 @@
 				(togglePlay)="togglePlay($event, item.uri)"
 				x448594643043-x-test-hook-22>
 				</as-media>
+				<as-album-track   
+				*ngFor="let item of data?.tracks?.items; let idx = index" 
+				[track]="item" 
+				[contextUri]="item.album.uri"  
+				[index]="idx + 1"  
+				x448594643043-x-test-hook-14>  
+				</as-album-track>  
 			</div>
 		</div>
 
