@@ -5,6 +5,7 @@ import { PlaybackService, PlaybackStore } from '@angular-spotify/web/shared/data
 import { loadPlaylists } from '@angular-spotify/web/playlist/data-access';
 import { VisualizerStore } from '@angular-spotify/web/visualizer/data-access';
 import { filter, map } from 'rxjs/operators';
+import { UIStore } from '@angular-spotify/web/shared/data-access/store';
 
 @Component({
   selector: 'as-layout',
@@ -13,6 +14,7 @@ import { filter, map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutComponent implements OnInit {
+	readonly navItems$ = this.uiStore.navItems$;
   showPiPVisualizer$ = this.visualizerStore.showPiPVisualizer$;
   currentAlbumCoverUrl$ = this.playbackStore.currentTrack$.pipe(
     map((track) => track?.album?.images[0]?.url),
@@ -24,6 +26,7 @@ export class LayoutComponent implements OnInit {
     private playbackStore: PlaybackStore,
     private playbackService: PlaybackService,
     private store: Store,
+	private readonly uiStore: UIStore,
     private visualizerStore: VisualizerStore
   ) {}
 
