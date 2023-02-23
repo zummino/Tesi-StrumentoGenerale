@@ -1,15 +1,4 @@
 <h2 class="mt-8 mb-4 text-heading" x448589689376-x-test-tpl-1>Recently Played</h2>
 
-<ul class="nav-bar-top" x448627084077-x-test-tpl-3>
-	<li *ngFor="let item of navItems$ | async" class="px-2 nav-link-container" x448627084077-x-test-hook-4>
-		<a [routerLink]="item.path"
-			routerLinkActive="active"      
-			[routerLinkActiveOptions]="{ exact: item.exact! }"
-			class="flex items-center px-4 nav-link link-subtle"
-			x448627084077-x-test-hook-5> 
-			{{ item.label }} 
-		</a>
- 	</li>
-</ul>
 
 <div *ngIf="recentTracks$ | async as recentTracks"   class="common-grid" x448589689376-x-test-tpl-2> 	<as-media *ngFor="let historyObject of recentTracks"  [title]="historyObject.track.name"  [description]="historyObject.track.artists[0]?.name!" [imageUrl]="historyObject.track.album.images[0]?.url!"  [routerUrl]="getAlbumUrl(historyObject.track.album.id)"  [uri]="historyObject.track.uri"  (togglePlay)="togglePlayTrack($event, historyObject.track.uri)" x448589689376-x-test-hook-3> 	</as-media></div><as-spinner *ngIf="isLoading$ | async" x448589689376-x-test-tpl-4> </as-spinner>

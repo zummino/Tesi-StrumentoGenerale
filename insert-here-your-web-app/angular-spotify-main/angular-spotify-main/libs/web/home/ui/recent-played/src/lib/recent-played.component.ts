@@ -8,6 +8,7 @@ import { PlayerApiService } from '@angular-spotify/web/shared/data-access/spotif
 import { RouteUtil } from '@angular-spotify/web/shared/utils';
 import { UIStore } from '@angular-spotify/web/shared/data-access/store';
 
+
 @Component({
   selector: 'as-recent-played',
   templateUrl: './recent-played.component.html',
