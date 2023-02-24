@@ -1,4 +1,4 @@
-<as-media-table-row subclass="artist-top-tracks-grid track-row" (dblclick)="togglePlayTrack(false)" x448548528526-x-test-tpl-1> 
+<as-media-table-row class="artist-top-tracks-grid track-row" (dblclick)="togglePlayTrack(false)" x448548528526-x-test-tpl-1> 
 	<ng-container *ngrxLet="isTrackPlaying$ as isPlaying" x448548528526-x-test-hook-2>   		
 	<as-media-order [index]="order"    [isPlaying]="isPlaying!"   (togglePlay)="togglePlayTrack($event)" x448548528526-x-test-hook-3>    </as-media-order> 
 	<as-track-main-info [track]="$any(track)"  [isShowArtist]="false"  [isPlaying]="isPlaying" x448548528526-x-test-hook-4>    </as-track-main-info>   	
