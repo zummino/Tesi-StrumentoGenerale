@@ -1,5 +1,4 @@
 <as-media-cover [imageUrl]="imageUrl" x448607117010-x-test-tpl-1></as-media-cover>
-<div x448607117010-x-test-tpl-3>
 <div class="flex flex-col" x448607117010-x-test-tpl-2>
 	<h3 class="text-sm text-white uppercase" x448607117010-x-test-hook-3>{{ type }}</h3>
 	<h2 class="media-title ellipsis-one-line" x448607117010-x-test-hook-4>{{ title }}</h2>
@@ -10,6 +9,6 @@
 		<div class="media-info" *ngIf="releaseDate" x448607117010-x-test-hook-9>{{ releaseDate | date:'yyyy'}}</div>
 		<div class="media-info" *ngIf="trackCount" x448607117010-x-test-hook-10>{{ trackCount | i18nPlural : songMapping }}</div>
 		<div class="media-info" *ngIf="followerCount" x448607117010-x-test-hook-11>{{ followerCount | i18nPlural : followerMapping }}</div>
+		<div class="media-info" x448607117010-x-test-hook-12></div>
 	</div>
-</div>
 </div>
