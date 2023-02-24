@@ -2,7 +2,9 @@
 	<ng-container [ngTemplateOutlet]="logoTmpl" x448627084077-x-test-hook-2></ng-container>
 </a>
 <ul class="nav-bar-top" x448627084077-x-test-tpl-3>
+	<a> Spotify </a>
 	<li *ngFor="let item of navItems$ | async" class="px-2 nav-link-container" x448627084077-x-test-hook-4>
+		
 		<a [routerLink]="item.path"
 			routerLinkActive="active"      
 			[routerLinkActiveOptions]="{ exact: item.exact! }"
