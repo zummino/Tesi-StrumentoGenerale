@@ -1,4 +1,4 @@
-<div class="content-spacing" x448542025239-x-test-tpl-1>	
+
 	<ng-container *ngIf="album$ | async as album" x448542025239-x-test-hook-2>		
 		
 		<as-media-summary  [title]="album.name" [imageUrl]="album.images[0]?.url" [artist]="album.artists[0]?.name" [trackCount]="album.tracks.total" [releaseDate]="album.release_date" x448542025239-x-test-hook-3></as-media-summary>		
@@ -16,10 +16,10 @@
 		<div class="mb-8" x448542025239-x-test-hook-11>
 			<as-album-track *ngFor="let track of album.tracks.items" [contextUri]="album.uri" [track]="track" x448542025239-x-test-hook-12>
 			</as-album-track>
-		</div>
+		
 	</ng-container>
 	<div class="px-8 mb-5 album-loading" *ngIf="isAlbumLoading$ | async" x448542025239-x-test-hook-13>
 		<as-tracks-loading [avatar]="true" [title]="true" x448542025239-x-test-hook-14>
 		</as-tracks-loading>
 	</div>
-</div>
+
