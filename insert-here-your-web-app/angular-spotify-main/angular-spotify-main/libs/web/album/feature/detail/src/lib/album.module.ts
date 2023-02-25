@@ -8,6 +8,8 @@ import { PlayButtonModule } from '@angular-spotify/web/shared/ui/play-button';
 import { MediaTableModule } from '@angular-spotify/web/shared/ui/media-table';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { AlbumTrackModule } from '@angular-spotify/web/album/ui/album-track';
+import { MediaCoverModule } from '@angular-spotify/web/shared/ui/media-cover';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,6 +18,7 @@ import { AlbumTrackModule } from '@angular-spotify/web/album/ui/album-track';
     PlayButtonModule,
     MediaTableModule,
     SvgIconsModule,
+	MediaCoverModule,
     AlbumTrackModule,
     RouterModule.forChild([
       {
