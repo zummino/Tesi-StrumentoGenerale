@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.TesiIntegrazioneProgettoEsterno.Test_Katalon
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 22.559 s <<< FAILURE! - in com.example.TesiIntegrazioneProgettoEsterno.Test_Katalon
+test_loc_Katalon_release_1_1(com.example.TesiIntegrazioneProgettoEsterno.Test_Katalon)  Time elapsed: 22.475 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[Marco Mengoni]> but was:<[2021]>
+	at com.example.TesiIntegrazioneProgettoEsterno.Test_Katalon.test_loc_Katalon_release_1_1(Test_Katalon.java:117)
+
