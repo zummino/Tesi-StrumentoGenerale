@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AlbumStore } from '@angular-spotify/web/album/data-access';
 
+
 @Component({
   selector: 'as-album',
   templateUrl: './album.component.html',
