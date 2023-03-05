@@ -58,7 +58,7 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 	driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("odoobnb@gmail.com");
 	driver.findElement(By.xpath("//input[@id='login-password']")).click();
 	driver.findElement(By.xpath("//input[@id='login-password']")).clear();
-	driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova92");
+	driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova91");
 	driver.findElement(By.xpath("//button[@id='login-button']")).click();
 	
 	String f = driver.findElement(By.xpath("//html")).getText();
@@ -83,7 +83,7 @@ public static boolean isElementPresent(WebDriver driver, String locator) {
 		driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("odoobnb@gmail.com");
 		driver.findElement(By.xpath("//input[@id='login-password']")).click();
 		driver.findElement(By.xpath("//input[@id='login-password']")).clear();
-		driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova92");
+		driver.findElement(By.xpath("//input[@id='login-password']")).sendKeys("provaprova91");
 		driver.findElement(By.xpath("//button[@id='login-button']")).click();
 	
 		f = driver.findElement(By.xpath("//html")).getText();
