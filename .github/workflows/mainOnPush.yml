@@ -99,7 +99,9 @@ jobs:
             mvn clean install
             echo "dopo la mvn"
             cd target
+            echo "TEMPO_INIZIO: $(date +"%T")"
             sudo bash -c 'java -jar Tesi-injector-plugin-1.0-SNAPSHOT.jar ${{ secrets.FE_EXTENSION_TYPE }} ${{ secrets.GRAMMAR_TYPE }} ${{ secrets.DIR_FILE_FE }} correct nomeTag'
+            echo "TEMPO_FINE: $(date +"%T")"
             echo "Dopo l'injection!!!"
             git config --global user.email "${{ secrets.EMAIL_ACCOUNT_GITHUB }}"
             git config --global user.name "${{ secrets.NOME_ACCOUNT_GITHUB }}"
